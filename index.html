@@ -289,6 +289,34 @@
                 <h5> Ortega, K. (23 de diciembre de 2022). Las 7 etapas del ciclo de vida del Desarrollo de Software. Avenu Global. Recuperado el 15 de febrero de 2025, de<a href="
                     https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc"> https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc</a></h5>
             </section>
+
+            <!--Aplicacion de foma de control tipo <input type="radio"> Botones de opción (selección única)-->
+            <!--Aplicacion de foma de boton tipo button type="submit"> Botones de envio-->
+            <section>
+                <!-- Sección para la encuesta de opinión -->
+                <h3>¿Te gustó mi página?</h3>
+                <!-- Inicio del formulario -->
+                <!--especifica que los datos se enviarán a procesar_respuesta.php-->
+                <!--utilizando el método POST (para que la información no sea visible en la URL)-->
+                <form action="procesar_respuesta.php" method="post">
+                    <!-- Opción "Sí, me gustó" -->
+                    <!--<label> y <input type="radio" Crea botones de opción (radio buttons), donde los usuarios solo pueden seleccionar una opción.-->
+                    <label>
+                         <!-- Botón de opción (radio) para seleccionar "Sí" -->
+                         <!--El atributo name="opinion" agrupa los botones-->
+                         <!--value="si" y value="no" definen el valor que se enviará al servidor-->
+                         <!--required obliga a seleccionar una opción antes de enviar el formulario.-->
+                         <input type="radio" name="opinion" value="si" required> Sí, me gustó
+                    <!-- <br Agrega un salto de línea para separar opciones -->
+                    </label><br>
+                    <!-- Opción "No, podría mejorar" -->
+                    <label>
+                        <input type="radio" name="opinion" value="no" required> No, podría mejorar
+                    </label><br>
+                    <!-- Botón de envío del formulario -->
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
         </main>
 
         <!-- Pie de página -->
