@@ -1,3 +1,6 @@
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
 body {
 
     /*Centra todo*/
@@ -6,7 +9,8 @@ body {
     max-width: 50em;
     
     /*Camhia el tipo de letra a una legible en aparatos con luz*/
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    /*font-family: "Helvetica", "Arial", sans-serif;*/
     
     /* Da espacio entre palabras*/
     line-height: 1.5;
@@ -49,6 +53,7 @@ code {
 }
 
 pre {
+  /*QUE HACE ESTO*/
   border-left: 2px solid #69c;
   padding: 1em;
 }
@@ -58,3 +63,4 @@ la cual usabamos para los links*/
 a {
   color: #7636b5;
 }
+
