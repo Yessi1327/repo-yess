@@ -1,5 +1,60 @@
 body {
+
+    /*Centra todo*/
     margin: 0 auto;
+    /* em significa unidad de medida escalable */
     max-width: 50em;
+    
+    /*Camhia el tipo de letra a una legible en aparatos con luz*/
     font-family: "Helvetica", "Arial", sans-serif;
+    
+    /* Da espacio entre palabras*/
+    line-height: 1.5;
+
+    /*Crea un Margen a la pagina alto y ancho*/
+    padding: 2em 2em;
+
+    /*Color y contraste*/
+    color: #555;
+    /*color: #566b78;*/
+ 
   }
+
+  /* Le da formato a los titulos */
+  h1,
+  h2,
+  h3,
+  h4
+  /*Cambia el color a la etiqueta strong*/
+  strong {
+    
+    color: #333;
+  }
+
+  /*Que hacen estas lineas*/
+code,
+/*Cambia el color del fondo*/
+  pre {
+  /*background: #eee;*/
+  background: #f5f7f9;
+  /*QUE HACE ESTO*/
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+/*CUAL ES LA DIFERENCIA ENTRE PONERLO CON , O LUEGO LUEGO {*/
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  border-left: 2px solid #69c;
+  padding: 1em;
+}
+
+/*Cambia el color a todo lo de la etiqueta a 
+la cual usabamos para los links*/
+a {
+  color: #7636b5;
+}
