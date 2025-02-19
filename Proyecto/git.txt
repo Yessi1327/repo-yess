@@ -1,0 +1,15 @@
+git add -A 
+
+Para completar una transaccion
+git commit -m  "Escribir que commit haces"
+
+Enviar los datos al repositorio remoto 
+git push
+
+Main es para la entrega final 
+
+En la rama develop es para integrar 
+
+Crear una rama personal
+git checkout -b Yessica Lora     
+
