@@ -39,20 +39,49 @@ setTimeout(() => { console.log(item);
 
 const http = require("http");
 
-//Construccion de la app 
+//Ahora si vamos a meter una pagina web de la foma correcta. 
+
+//Para meter el html
+const html = file_system.readFileSync ('index.html');
+
+//Construccion de la app.web
 const server =  http.createServer( (request, response) => {
+    console.log (request.url);
+    response.setHeader("Content-type", "text/html");
+    response.write(html);
+    response.end();
+
+
+});
+
+//Para meter el html
+//const html = "Puedes poner aqui todo el HTML Y HARDCODEAR, Pero seria un codigo espageti"
+
+//Construccion de la app.web
+/*const server =  http.createServer( (request, response) => {
+    console.log (request.url);
+    response.setHeader("Content-type", "text/html");
+    response.write(html);
+    response.end();
+
+
+});*/
+
+
+//Construccion de la app.web
+/*const server =  http.createServer( (request, response) => {
     console.log (request.url);
     response.setHeader("Content-type", "text/html");
     response.write("<h2>Holi yessi</h2>");
     response.end();
 
 
+});*/
 
-});
 
 server.listen (3000);
 
 //siempre que haces una peticion al navegador el hace otra para pedir el icono
 
-
+//Para mandar una solicitud tienes que poner su ip de su servidor 
 
