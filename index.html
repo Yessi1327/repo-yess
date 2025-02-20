@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en dispositivos móviles -->
         <title>Yessica Lora Laboratorios Página web</title> <!-- Título de la página que aparece en la pestaña del navegador -->
 
-        <link rel="stylesheet" href="css/styles.css">
+        <link 
+        rel="stylesheet" 
+        href="css/styles.min.css"/>
     </head>
 
     <!--El body es donde va todo el contenido-->
@@ -14,7 +16,7 @@
         <header> 
             <!-- h1 sirve para establecer el tamaño-->
             <!-- Título principal de la página -->
-            <h2>Yessica Lora Vazquez | a01273574 |</h2> 
+            <h2>Yessica Lora Vazquez | a01273574 | a01273574@tec.mx</h2> 
             <!-- Descripción breve del contenido -->
             <p>Soy una apasionada del desarrollo de software con enfoque en programación y diseño de sistemas. Me encanta escribir código limpio, bien documentado y crear soluciones personalizadas y detalladas. Actualmente, tengo experiencia en C++ y HTML, y sigo aprendiendo bases de datos, APIs e inteligencia artificial.</p> 
             <p>Cuento con habilidades en trabajo en equipo, creatividad, liderazgo y comunicación, y me considero autodidacta, responsable y comprometida con cada proyecto. Uno de mis mayores logros ha sido el desarrollo de una tabla hash dinámica para gestionar empleados, optimizando su estructura con POO y apuntadores.</p>
@@ -323,6 +325,101 @@
                     <button type="submit">Enviar</button>
                 </form>
             </section>
+
+            <section>
+            
+                <h2>Laboratorio 3 CSS</h2>
+                <h3>=Cuestionario=</h3>
+
+            </section>
+
+            <!-- Pregunta 1 -->
+            <section>
+              
+                <h3>1. Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3>
+               
+                <p>Se debe usar <strong><code>&lt;!important&gt;</code></strong> con mucho cuidado, y no debes abusar de su uso ya que como vimos en clase es un primer paso para el código espagueti, ya que este cambia el estilo ignorando cualquier regla de estilo antes, si abusas de el puedes quedar 
+                    con un código donde no sepas donde editar o cambiar algún estilo, provocando problemas de mantenimiento en la pagina web. </p>
+                
+            </section>
+
+            <!-- Pregunta 2 -->
+            <section>
+               
+                <h3>2. Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </h3>
+               
+                <p>Por que hacer una mala elección puede afectar negativamente la experiencia del usuario y el desempeño del sitio web, así que algunos puntos que debes tomar en cuenta son</p>
+                <ul>
+                    <li><strong>Rendimiento y carga del sitio:</strong></li>
+                    <ul>
+                        <li>Imágenes pesadas ralentizan la carga del sitio </li>
+                    </ul>
+
+                    <li><strong>Legibilidad:</strong></li>
+                    <ul>
+                        <li>Fondos muy detallados dificultan la lectura del texto.</li>
+                    </ul>
+
+                    <li><strong>Adaptabilidad:</strong></li>
+                    <ul>
+                        <li> La imagen debe ajustarse a todas las pantallas.</li>
+                    </ul>
+
+                    <li><strong>Contraste:</strong></li>
+                    <ul>
+                        <li> Fondos llamativos pueden afectar la visibilidad de los elementos</li>
+                    </ul>
+
+                    <li><strong>Derechos de autor</strong></li>
+                </ul>
+                <h5> IONOS. (s.f.). _Cómo diseñar fondos para páginas web perfectos_. Recuperado de <a href="https://www.ionos.com/es-us/digitalguide/paginas-web/creacion-de-paginas-web/fondos-para-paginas-web/"> [https://www.ionos.com/es-us/digitalguide/paginas-web/creacion-de-paginas-web/fondos-para-paginas-web/</a></h5>
+            </section>
+
+            <!-- Pregunta 3 -->
+            <section>
+               
+                <h3> Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </h3>
+               
+                <ul>
+                    <li><strong>%(Porcentajes):</strong></li>
+                    <ul>
+                        <li>Mejor para diseño flexible y responsiva.</li>
+                        </li>Útil en <strong>layouts responsivos</strong> y propiedades como <strong>width y height</strong>.</li>
+                    </ul>
+
+                    <li><strong>px (Píxeles):</strong></li>
+                    <ul>
+                        <li>Útil para elementos con tamaño fijo.</li>
+                        <li>No es escalable, pero garantiza precisión </li>
+                        <li>Recomendado para <strong>bordes, imágenes y pequeñas distancias</strong>.</li>
+                    </ul>
+
+                    <li><strong>pt (Puntos):</strong></li>
+                    <ul>
+                        <li>No recomendado para web.</li>
+                        <li>Se usa más en impresión, no en pantallas digitales.</li>
+                        <li>No es adaptable en dispositivos</li>
+                    </ul>
+                </ul>
+                <h5>  Mozilla Developer Network. (s.f.). _Valores y unidades CSS - Aprende desarrollo web_. Recuperado de  <a href="[https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Values_and_units">https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Values_and_units</a></h5>
+            </section>
+
+            <!-- Pregunta 4 -->
+            <section>
+               
+                <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio? </h3>
+               
+                <ul>
+                    <li>Reducción del tamaño del archivo</li>
+                    <li>Menos solicitudes HTTP/ Carga mas rápida</li>
+                    <li>Mayor eficiencia en la caché</li>
+                    <li>Mejor rendimiento en dispositivos móviles</li>
+                </ul>
+                <h5> Mozilla Developer Network. (s.f.). _Optimización del rendimiento web - Minificación de CSS y JavaScript_. Recuperado el 19 de febrero de 2025, de  <a href="https://developer.mozilla.org/es/docs/Web/Performance/Optimizing_CSS">https://developer.mozilla.org/es/docs/Web/Performance/Optimizing_CSS</a></h5>
+            </section>
+
+
+
         </main>
 
         <!-- Pie de página -->
