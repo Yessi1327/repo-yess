@@ -32,5 +32,27 @@ setTimeout(() => { console.log(item);
 }, item);
 }
 
+//escucha el puerto 3000
+//localhost 3000
+// 127.0.01 3000
+// home: 3000
+
+const http = require("http");
+
+//Construccion de la app 
+const server =  http.createServer( (request, response) => {
+    console.log (request.url);
+    response.setHeader("Content-type", "text/html");
+    response.write("<h2>Holi yessi</h2>");
+    response.end();
+
+
+
+});
+
+server.listen (3000);
+
+//siempre que haces una peticion al navegador el hace otra para pedir el icono
+
 
 
