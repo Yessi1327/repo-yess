@@ -56,4 +56,37 @@ for (let i = 0; i <= 10; i++){
 alert("En esta pagina accederas a mucho conocimiento, cuidado ;o");
 
 //Manda una pregunta con un campo a responder 
-const pregunta = prompt("Cual es mi animal favorito?");
+const pregunta = prompt("Cual es tu dino favorito?");
+
+//Sale una ventana para que confirme una pregunta debuelve un booleano
+const tienes_hambre = confirm("Te gustaria aprender");
+
+// funciones
+function alimenta_d(){
+    console.log("Los dinosaurios te comieron");
+    return pregunta;
+}
+
+const dino = alimenta_d();
+
+//funciones anonimas
+()=>{}
+
+//Asignas una función anonima a una variable
+const funcion_anonima = () => {
+    console.log("funcion_anonima");
+};
+
+//Ejecuta la funcion anonima por la variable
+funcion_anonima();
+
+// undefined, pq los paramatros no se le pueden meter a la variable
+const suma = (x,y,z) => {
+    x + y + z 
+};
+
+console.log(suma(1,2,3));
+
+
+
+
