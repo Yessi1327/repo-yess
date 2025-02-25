@@ -1,29 +1,28 @@
 <!DOCTYPE html> <!--Define el -->
 <html lang = "es"> <!--Define el idioma del documento HTML-->
     <head>
-        <title>Felinos!</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <meta charset="UTF-8"> <!-- Define la codificación de caracteres para soportar caracteres especiales -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en dispositivos móviles -->
-        <title>Yessica Lora Laboratorios Página web</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+        <title>!Laboratorios Yessica!</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+        
+        <!-- Enlace a Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <!-- Mis estilos personalizados -->
+        <style>
 
-        <link 
-        rel="stylesheet" 
-        href="css/styles.min.css"/>
+            /*Mis estilos de bulma*/
+            
+
+        </style>
     </head>
 
     <!--El body es donde va todo el contenido-->
-    <body>
-        <section class="section">
-            <div class="container">
-                <h1 class="title"></h1>
-                <p class="subtitle">
-                    My first website with <strong>Bulma</strong>!
-                </p>
-            </div>
+    <body >
         </section>
          <!-- Encabezado de la página -->
-        <header> 
+        <header class="container"> 
+           <!--AQUI DEBO PONER TODO LO DE BULMA-->
+           
             <!-- h1 sirve para establecer el tamaño-->
             <!-- Título principal de la página -->
             <h2>Yessica Lora Vazquez | a01273574 | a01273574@tec.mx</h2> 
@@ -39,7 +38,8 @@
 
         <!-- Sección de contenido principal -->
 
-        <main> 
+        <main class="container"> 
+
             <!-- Sección que agrupa el contenido relacionado -->
             <section>
                 <!--los h# se usan para Titulos-->
@@ -307,7 +307,7 @@
                 <h5> Ortega, K. (23 de diciembre de 2022). Las 7 etapas del ciclo de vida del Desarrollo de Software. Avenu Global. Recuperado el 15 de febrero de 2025, de<a href="
                     https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc"> https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc</a></h5>
            
-           
+            
             </section>
             
                 <h2>Laboratorio 3 CSS</h2>
@@ -407,31 +407,31 @@
 
             <section>
                 <h3>Problemas 1</h3>
-                <button id="boton_problema_1">Tabla</button>
+                <button  id="boton_problema_1">Tabla</button>
                 <div id="contenido_tabla"></div> <!-- Aquí se insertará la tabla -->
             </section>
 
             <section>
                 <h3>Problemas 2</h3>
-                <button id="boton_problema_2">Resultado Suma</button>
+                <button class="button is-light" id="boton_problema_2">Resultado Suma</button>
                 <div id="resultado_suma"></div> <!--Aquí se insertará el resultado de la suma--> 
             </section>
 
             <section>
                 <h3>Problemas 3</h3>
-                <button id="boton_problema_3">Resultado contador</button>
+                <button  id="boton_problema_3">Resultado contador</button>
                 <div id="resultado_contador"></div> <!--Aquí se insertará el resultado de la suma--> 
             </section>
 
             <section>
                 <h3>Problemas 4</h3>
-                <button id="boton_problema_4">Resultado contador</button>
+                <button  id ="boton_problema_4">Resultado contador</button>
                 <div id="resultado_promedios"></div> <!--Aquí se insertará el resultado de la suma--> 
             </section>
 
             <section>
                 <h3>Problemas 5</h3>
-                <button id="boton_problema_5">Resultado promedios F-matriz</button>
+                <button id= "boton_problema_5">Resultado promedios F-matriz</button>
                 <div id="resultado_inverso"></div> <!--Aquí se insertará el resultado de la suma--> 
             </section>
 
@@ -442,7 +442,7 @@
                 Fue originalmente resuelto en str C++ en la clase de Programación Orientada a Objetos (POO) del segundo semestre, donde se creó una clase Calculadora 
                 con métodos similares, Ahora, en JavaScript, la solución se ha adaptado el codigo para que sea interactiva, permitiendo la entrada de datos 
                 con prompt() y mostrando los resultados en el HTML con getElementById(). Además, se maneja la división por cero para evitar errores.</p>
-                <button id="boton_problema_6">Resultado calculadora</button>
+                <button id = "boton_problema_6">Resultado calculadora</button>
                 <div id="resultado_calculadora"></div> <!--Aquí se insertará el resultado de la suma--> 
             </section>
 
@@ -525,8 +525,7 @@
 
                 <h5>Mozilla Developer Network. (s.f.). _Variables - JavaScript_. Recuperado el 19 de febrero de 2025, de  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables</a></h5>
             </section>
-
-
+           
             <!--Aplicacion de foma de control tipo <input type="radio"> Botones de opción (selección única)-->
             <!--Aplicacion de foma de boton tipo button type="submit"> Botones de envio-->
             <section>
@@ -551,7 +550,7 @@
                         <input type="radio" name="opinion" value="no" required> No, podría mejorar
                     </label><br>
                     <!-- Botón de envío del formulario -->
-                    <button type="submit">Enviar</button>
+                    <button  type="submit">Enviar</button>
                 </form>
             </section>
 
@@ -569,6 +568,6 @@
             <p>Más información en <a href="https://code.visualstudio.com/">Visual Studio Code</a></p> <!-- Enlace a la página oficial de VS Code -->
         </footer>
         <!--<script src="jar/introjs.js"></script>-->
-        <script src="jar/lab_4.js"></script> <!-- Enlazamos el archivo JavaScript -->
+        <script src="../applab08.js"></script> <!-- Enlazamos el archivo JavaScript -->
     </body>
 </html>
