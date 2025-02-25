@@ -122,12 +122,20 @@ const app = express();
 //next lo que hace es pasar al siguiente midelware
 //imprime en la consola en 
 //Middleware
+
+// cualquier otra ruta entra esta por que esta es la global
 app.use((request, response, next) => {
     console.log('Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
+/*//primera ruta añadida
 app.use("/plantas/agregar",(request, response, next)=> {
+    response.send(html_header+html_form+html_footer);
+});*/
+
+//para peticiones http GET
+app.get("/plantas/agregar",(request, response, next)=> {
     response.send(html_header+html_form+html_footer);
 });
 
