@@ -1,0 +1,573 @@
+<!DOCTYPE html> <!--Define el -->
+<html lang = "es"> <!--Define el idioma del documento HTML-->
+    <head>
+        <meta charset="UTF-8"> <!-- Define la codificación de caracteres para soportar caracteres especiales -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en dispositivos móviles -->
+        <title>!Laboratorios Yessica!</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+        
+        <!-- Enlace a Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <!-- Mis estilos personalizados -->
+        <style>
+
+            /*Mis estilos de bulma*/
+            
+
+        </style>
+    </head>
+
+    <!--El body es donde va todo el contenido-->
+    <body >
+        </section>
+         <!-- Encabezado de la página -->
+        <header class="container"> 
+           <!--AQUI DEBO PONER TODO LO DE BULMA-->
+           
+            <!-- h1 sirve para establecer el tamaño-->
+            <!-- Título principal de la página -->
+            <h2>Yessica Lora Vazquez | a01273574 | a01273574@tec.mx</h2> 
+            <!-- Descripción breve del contenido -->
+            <p>Soy una apasionada del desarrollo de software con enfoque en programación y diseño de sistemas. Me encanta escribir código limpio, bien documentado y crear soluciones personalizadas y detalladas. Actualmente, tengo experiencia en C++ y HTML, y sigo aprendiendo bases de datos, APIs e inteligencia artificial.</p> 
+            <p>Cuento con habilidades en trabajo en equipo, creatividad, liderazgo y comunicación, y me considero autodidacta, responsable y comprometida con cada proyecto. Uno de mis mayores logros ha sido el desarrollo de una tabla hash dinámica para gestionar empleados, optimizando su estructura con POO y apuntadores.</p>
+            <p>Fuera del ámbito tecnológico, disfruto jugar baloncesto, videojuegos, juegos de mesa, leer, hacer hiking y viajar, explorando pueblos mágicos y lugares naturales. Estoy siempre en busca de nuevos aprendizajes y desafíos para seguir creciendo en el mundo del software.</p> 
+        </header>
+        <nav>
+            <!--como se utiliza nav se que es para la navegacion de tu pagina-->
+            <!--Es la lista de hipervinculos de la pagina -->
+        </nav>
+
+        <!-- Sección de contenido principal -->
+
+        <main class="container"> 
+
+            <!-- Sección que agrupa el contenido relacionado -->
+            <section>
+                <!--los h# se usan para Titulos-->
+                <h2>Laboratorio 1 HTML5</h2>
+                <h3>=Cuestionario=</h3>
+            </section>
+
+            <!-- Pregunta 1 -->
+            <section>
+                <!--h# sirve para titulos-->
+                <h3>1. ¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+                <!--<p> se usa para definir párrafos de texto dentro de una página web.-->
+                <p>La diferencia radica en su función, ya que el Internet es la red que conecta a los dispositivos, mientras que la World Wide Web es una de las aplicaciones que permite acceder a la información en esa red.</p>
+                <!--<strong> Texto en Negrita (Mayor Énfasis) resalta el nombre-->
+                <p><strong>Internet:</strong> Es una red global de computadoras interconectadas que permite el intercambio de información entre dispositivos.</p>
+                <p><strong>World Wide Web:</strong> Es un sistema de información que utiliza Internet como medio para acceder a recursos, como páginas web enlazadas mediante hipervínculos a través de protocolos como HTTP.</p>
+                <p>En resumen, el Internet es la infraestructura donde vive la WWW.</p>
+                <!--Referencia <a href para ingresar links-->
+                <h5> Diferenciador. (s.f.). Diferencia entre internet y web. Recuperado el 15 de febrero de 2025, de <a href="https://www.diferenciador.com/diferencia-entre-internet-y-web/">https://www.diferenciador.com/diferencia-entre-internet-y-web/</a></h5>
+            </section>
+            
+            <!-- Pregunta 2 -->
+            <section>
+                <h3>2. ¿Cuáles son las partes de un URL?</h3>
+                <!-- <ul> Unordered List (Lista desordenada) crea una lista con viñetas.  -->
+                <ul>
+                    <!--<li> List Item (Elemento de Lista) define cada elemento de la lista-->
+                    <!--<strong> Texto en Negrita (Mayor Énfasis) resalta el texto-->
+                    <li><strong>Esquema (Protocolo):</strong> Define el protocolo de comunicación utilizado, como HTTP o HTTPS.</li>
+                    <li><strong>Subdominio (Opcional):</strong> Puede incluir prefijos como www o personalizados (blog.ejemplo.com).</li>
+                    <li><strong>Dominio:</strong> Es el nombre del sitio web, como ejemplo.com.</li>
+                    <li><strong>TLD (Top-Level Domain):</strong> Es la extensión del dominio, como .com, .org, .net.</li>
+                    <li><strong>Puerto (Opcional):</strong> Un número que indica el puerto de conexión al servidor, como :80 para HTTP o :443 para HTTPS.</li>
+                    <li><strong>Ruta:</strong> Especifica la ubicación del recurso dentro del servidor.</li>
+                    <li><strong>Parámetros (Query String "?"):</strong> Contienen información adicional en formato clave=valor, separados por &.</li>
+                    <li><strong>Fragmento (Anchor "#"):</strong> Indica una sección específica de la página.</li>
+                </ul>
+                <h5>  MDN Web Docs. (s.f.). URL - Uniform Resource Locator. Mozilla. Recuperado el 15 de febrero de 2025, de <a href=" https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL"> https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL</a></h5>
+            </section>  
+
+            <!-- Pregunta 3 -->
+            <section>
+                <h3>3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                <!-- Inicio de la tabla con borde -->
+                <table border="2"> 
+                    <!-- <thead> Encabezado de la tabla -->
+                    <thead>
+                        <!-- <tr> Fila del encabezado -->
+                        <tr>
+                            <!--th celdas de encabezado-->
+                            <th>Método</th><!-- Encabezado de la columna 1:-->
+                            <th>Propósito</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <!-- Cuerpo de la tabla -->
+                    <tbody>
+                        <!-- <tr> Fila con datos <td> define celdas de datos-->
+                        <tr>
+                            <td>GET</td>
+                            <td>Solicitar datos de un recurso en el servidor sin modificarlo.</td>
+                            <td>Ejemplo: GET /usuarios</td>
+                        </tr>
+                        <tr><td>HEAD</td><td>Similar a GET, pero solo obtiene los encabezados de la respuesta sin el cuerpo.</td><td>Ejemplo: HEAD /imagen.jpg</td></tr>
+                        <tr><td>POST</td><td>Enviar datos al servidor para crear un nuevo recurso.</td><td>Ejemplo: POST /usuarios</td></tr>
+                        <tr><td>PUT</td><td>Actualizar completamente un recurso en el servidor, reemplazando su contenido.</td><td>Ejemplo: PUT /usuarios/123</td></tr>
+                        <tr><td>PATCH</td><td>Modificar parcialmente un recurso en el servidor.</td><td>Ejemplo: PATCH /usuarios/123</td></tr>
+                        <tr><td>DELETE</td><td>Eliminar un recurso del servidor.</td><td>Ejemplo: DELETE /usuarios/123</td></tr>
+                    </tbody>
+                <!-- Fin de la tabla -->
+                </table>
+                <h5> MDN Web Docs. (s.f.). Métodos de petición HTTP. Mozilla. Recuperado el 15 de febrero de 2025, de <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">https://developer.mozilla.org/es/docs/Web/HTTP/Methods </a></h5>
+            </section>
+
+            <!-- Pregunta 4 -->
+            <section>
+                <h3>4. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+                <p>El método HTTP que se debe utilizar al enviar un formulario HTML con algún usuario y contraseña es <strong>POST</strong>.</p>
+                <h4>¿Por qué?</h4>
+                <ul>
+                    <li><strong>Seguridad:</strong> POST envía los datos en el cuerpo de la solicitud HTTP, lo que evita que la información sensible (como contraseñas) aparezca en la URL, a diferencia de GET.</li>
+                    <li><strong>No almacenado en caché ni en historial:</strong> A diferencia de GET, los datos enviados con POST no quedan registrados en el historial del navegador ni en los registros del servidor.</li>
+                    <li><strong>Mayor capacidad de datos:</strong> POST permite enviar grandes cantidades de información, mientras que GET tiene limitaciones en la longitud de la URL.</li>
+                </ul>
+                <h5> MDN Web Docs. (s.f.). Usando formularios en HTML. Mozilla. Recuperado el 15 de febrero de 2025, de<a href=" https://developer.mozilla.org/es/docs/Learn/Forms/Sending_and_retrieving_form_data"> https://developer.mozilla.org/es/docs/Learn/Forms/Sending_and_retrieving_form_data</a></h5>
+            </section>
+
+            <!-- Pregunta 5 -->
+            <section>
+                <h3>5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+                <p>Cuando se accede a una página web a través de un URL en un navegador, se utiliza el método<strong> HTTP GET</strong>.</p>
+                <h4>¿Por qué?</h4>
+                <ul>
+                    <!--Se puede hacer un tab de lista mas dentro de otro añadiendo otro ul-->
+                    <li><strong>Recuperación de recursos:</strong> <ul><li>Se usa para solicitar datos de un servidor sin modificar nada en él.</li></ul></li>
+                    <li><strong>Datos en la URL:</strong> <ul><li>GET puede incluir parámetros en la URL.</li></ul></li>
+                    <li><strong>Almacenamiento en caché :</strong>  <ul><li>Las respuestas a <strong>GET</strong> pueden ser almacenadas en caché por los navegadores.</li></ul></li>
+                </ul>
+                <h5> MDN Web Docs. (s.f.). Métodos de petición HTTP. Mozilla. Recuperado el 15 de febrero de 2025, de<a href=" https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET"> https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET</a></h5>
+            </section>
+
+            <!-- Pregunta 6 -->
+            <section>
+                <h3>6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+                <p> El código de estado <strong>HTTP 200 "OK"</strong> indica que la solicitud del cliente fue procesada correctamente por el servidor y que la respuesta contiene el recurso solicitado, así que el servidor devuelve el contenido solicitado.</p>
+                <p> Es el código de estado más común para respuestas <strong>GET</strong> aunque también puede aplicarse a <strong>POST</strong>, <strong>PUT</strong>, etc.</p>
+                <h5> MDN Web Docs. (s.f.). Códigos de estado de respuesta HTTP. Mozilla. Recuperado el 15 de febrero de 2025, de<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status"> https://developer.mozilla.org/es/docs/Web/HTTP/Status</a></h5>
+            </section>
+
+            <!-- Pregunta 7 -->
+            <section>
+                <h3>7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+                <p>Depende de la causa del error <strong>404 "Not Found"</strong>, ya que este error significa que el recurso al que el usuario está tratando de acceder no existe o no fue encontrado en el servidor y no siempre es culpa del desarrollador. Incluso puede ser error del usuario al no escribir correctamente la URL, la conexión a internet del usuario falló, etc.</p>
+                <h5>MDN Web Docs. (s.f.). Errores HTTP 404 Qué son y cómo corregirlos. Mozilla. Recuperado el 15 de febrero de 2025, de<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status/404">https://developer.mozilla.org/es/docs/Web/HTTP/Status/404</a></h5>
+            </section>
+
+            <!-- Pregunta 8 -->
+            <section>
+                <h3>8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+                <p>Sí, ya que el error <strong>500 "Internal Server Error"</strong> significa que hay un problema interno con el servidor que impide que la solicitud se complete de forma correcta. Esto puede ser causado por errores en el código del backend, errores en la configuración del servidor, errores de permisos, errores con las APIs o errores en la base de datos.</p>
+                <h5> MDN Web Docs. (s.f.). 500 Internal Server Error. Mozilla. Recuperado el 15 de febrero de 2025, de<a href=" https://developer.mozilla.org/es/docs/Web/HTTP/Status/500"> https://developer.mozilla.org/es/docs/Web/HTTP/Status/500</a></h5>
+            </section>
+
+            <!-- Pregunta 9 -->
+            <section>
+                <h3>9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+                <p>Cuando un atributo o elemento en <strong>HTML5</strong> está <strong>depreciado (deprecated)</strong>, significa que <strong>su uso ya no es recomendado</strong> y que podría ser eliminado en futuras versiones del estándar. Aunque aún puede funcionar en algunos navegadores, su compatibilidad no está garantizada y se recomienda reemplazarlo con alternativas más modernas.</p>
+                <p>La deprecación ocurre cuando un elemento se considera obsoleto o innecesario debido a mejoras en el lenguaje, como el uso de <strong>CSS, nuevas etiquetas semánticas o APIs avanzadas</strong>.</p>
+                <h5> MDN Web Docs. (s.f.). Elementos y atributos obsoletos en HTML5. Mozilla. Recuperado el 15 de febrero de 2025, de<a href="https://developer.mozilla.org/es/docs/Web/HTML/Obsolete_Elements">https://developer.mozilla.org/es/docs/Web/HTML/Obsolete_Elements</a></h5>
+            </section>
+
+            <!-- Pregunta 10 -->
+            <section>
+                <h3>10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+                <p>HTML5 es la evolución de HTML 4 pues ofrece una estructura más limpia, soporte nativo para multimedia, mejores formularios, nuevas APIs y mayor compatibilidad con dispositivos modernos, mejorando la funcionalidad, estructura y compatibilidad con nuevas tecnologías web.</p>
+                <h4>Soporte para contenido multimedia</h4>
+                <ul>
+                    <li><strong>HTML4:</strong> Requería complementos externos como Flash o Silverlight para reproducir audio y video.</li>
+                    <li><strong>HTML5:</strong> Introduce las etiquetas <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code>, permitiendo reproducir contenido sin complementos adicionales.</li>
+                </ul>
+                <h4>Nuevas etiquetas semánticas</h4>
+                <ul>
+                    <li><strong>HTML4:</strong> Utilizaba principalmente <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code> para estructurar contenido.</li>
+                    <li><strong>HTML5:</strong> Introduce etiquetas semánticas como <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code> y <code>&lt;footer&gt;</code>, mejorando la accesibilidad y la estructura del contenido.</li>
+                </ul>
+                <h4>Mejor soporte para aplicaciones web</h4>
+                <ul>
+                    <li><strong>HTML4:</strong> No incluía APIs integradas para desarrollo web avanzado.</li>
+                    <li><strong>HTML5:</strong> Incluye APIs como:</li>
+                    <ul>
+                        <li>Canvas API: Para gráficos y animaciones 2D.</li>
+                        <li>Web Storage (LocalStorage y SessionStorage): Para almacenar datos en el navegador sin cookies.</li>
+                        <li>Geolocation API: Para obtener la ubicación del usuario.</li>
+                    </ul>
+                </ul>
+                <h4>Eliminación de etiquetas obsoletas</h4>
+                <ul>
+                    <li><strong>HTML4:</strong> Utilizaba etiquetas y atributos desactualizados como <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code> y <code>&lt;bgcolor&gt;</code>.</li>
+                    <li><strong>HTML5:</strong> Elimina estas etiquetas en favor de CSS para mejorar la presentación.</li>
+                </ul>
+                <h4>Mejoras en formularios y validación de datos</h4>
+                <ul><li>HTML5 introduce nuevos atributos y tipos de entrada como <code>email</code>, <code>date</code>, <code>number</code> y <code>placeholder</code>, mejorando la validación sin necesidad de JavaScript.</li></ul>
+                <h4> Compatibilidad con dispositivos móviles</h4>
+                <ul><li>Mejora la compatibilidad con móviles gracias a la etiqueta <code>&lt;meta viewport&gt;</code>.</ul></li>
+                <h5>MDN Web Docs. (s.f.). Diferencias entre HTML4 y HTML5. Mozilla. Recuperado el 15 de febrero de 2025, de<a href=" https://developer.mozilla.org/en-US/docs/Glossary/HTML5"> https://developer.mozilla.org/en-US/docs/Glossary/HTML5</a></h5>
+            </section>
+
+            <!-- Pregunta 11 -->
+            <section>
+                <h3>11. ¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+                <ul>
+                    <!--<code> es para darle formato tipo codigo y para poder escribir < usas "&lt" y para > "&gt"-->
+                    <li><strong><code>&lt;table&gt;</code></strong> → Elemento que define la tabla.</li>
+                    <li><strong><code>&lt;tr&gt;</code> (Table Row)</strong> → Define una fila en la tabla.</li>
+                    <li><strong><code>&lt;th&gt;</code> (Table Header)</strong> → Define una celda de encabezado (negrita y centrada por defecto).</li>
+                    <li><strong><code>&lt;td&gt;</code> (Table Data)</strong> → Define una celda de datos.</li>
+                    <li><strong><code>&lt;caption&gt;</code></strong> → Agrega un título o descripción a la tabla.</li>
+                    <li><strong><code>&lt;thead&gt;</code></strong> → Agrupa los encabezados de la tabla.</li>
+                    <li><strong><code>&lt;tbody&gt;</code></strong> → Contiene el cuerpo de la tabla.</li>
+                    <li><strong><code>&lt;tfoot&gt;</code></strong> → Define una sección al final de la tabla, útil para resúmenes.</li>
+                </ul>
+                <p>HTML por sí solo no proporciona estilos atractivos para las tablas, por lo que se usa CSS para mejorar la apariencia.</p>
+                <ul>
+                    <li><strong>border</strong> → Agrega bordes a la tabla.</li>
+                    <li><strong>border-collapse</strong> → Elimina espacios entre bordes.</li>
+                    <li><strong>padding y text-align</strong> → Ajustan la alineación y espaciado en las celdas.</li>
+                    <li><strong>background-color</strong> → Cambia los colores de fondo.</li>
+                    <li><strong>nth-child(even/odd)</strong> → Alterna colores en filas.</li>
+                </ul>
+                <h5> MDN Web Docs. (s.f.). HTML Tables. Mozilla. Recuperado el 15 de febrero de 2025, de<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables">https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables</a></h5>
+            </section>
+            
+            <!-- Pregunta 12 -->
+            <section>
+                <h3>12. ¿Cuáles son los principales controles de una forma HTML5?</h3>
+                <h4>Controles básicos de entrada (<code>&lt;input&gt;</code>)</h4>
+                <ul>
+                    <li><strong><code>&lt;input type="text"&gt;</code></strong> → Campo de texto de una línea.</li>
+                    <li><strong><code>&lt;input type="password"&gt;</code></strong> → Campo de contraseña (oculta los caracteres).</li>
+                    <li><strong><code>&lt;input type="email"&gt;</code></strong> → Valida automáticamente correos electrónicos.</li>
+                </ul>
+                <h4>Controles de selección</h3>
+                <p>Estos elementos permiten elegir opciones predefinidas.</p>
+                <ul>
+                    <li><strong><code>&lt;select&gt;</code></strong> → Lista desplegable.</li>
+                    <li><strong><code>&lt;option&gt;</code></strong> → Opción dentro de <code>&lt;select&gt;</code>.</li>
+                    <li><strong><code>&lt;input type="checkbox"&gt;</code></strong> → Casillas de verificación (selección múltiple).</li>
+                    <li><strong><code>&lt;input type="radio"&gt;</code></strong> → Botones de opción (selección única).</li>
+                </ul>
+                <h4>Controles avanzados para mejorar la experiencia de usuario</h4>
+                <ul>
+                    <li><strong><code>&lt;input type="file"&gt;</code></strong> → Permite la carga de archivos.</li>
+                    <li><strong><code>&lt;progress&gt;</code></strong> → Barra de progreso.</li>
+                </ul>
+                <h4>Controles de texto avanzado</h4>
+                <ul>
+                    <li><strong><code>&lt;textarea&gt;</code></strong> → Campo de texto de múltiples líneas.</li>
+                    <li><strong><code>&lt;input placeholder="Texto de ayuda"&gt;</code></strong> → Texto guía dentro de los campos.</li>
+                </ul>
+                <h5>MDN Web Docs. (s.f.). Form controls in HTML5. Mozilla. Recuperado el 15 de febrero de 2025, de<a href="https://developer.mozilla.org/es/docs/Learn/Forms">https://developer.mozilla.org/es/docs/Learn/Forms</a></h5>
+            </section>
+
+            <!-- Pregunta 13 -->
+            <section>
+                <h3>13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+                <p><strong>Google Chrome:</strong> Es totalmente compatible y gracias a su rápido ciclo de actualizaciones, ha mantenido un soporte robusto para las características de HTML5.</p>
+                <h5> BrowserStack. (13 de febrero de 2025). How to test Browser Compatibility for HTML5. BrowserStack. Recuperado el 15 de febrero de 2025, de<a href="
+                    https://www.browserstack.com/guide/html5-browser-compatibility-test">https://www.browserstack.com/guide/html5-browser-compatibility-test</a></h5>
+            </section>
+
+            <!--Subtitulo-->
+            <h3> =Sobre el ciclo de vida y desarrollo de los sistemas de información:=</h3>
+           
+            <!-- Pregunta 14 -->
+            <Section>
+                <h3> ¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+                <p> El <strong>Ciclo de Vida del Desarrollo de Sistemas de Información (SDLC System Development Life Cycle)</strong> es un proceso estructurado que define las fases necesarias para <strong>diseñar, desarrollar, implementar y mantener un sistema de información</strong>. Este ciclo garantiza que el sistema sea eficiente, seguro y alineado con los objetivos.</p>
+                <h4>Fases</h4>
+                <ul>
+                    <li><strong>1. Planificación (Planning):</strong> Se define el alcance, objetivos y viabilidad del sistema.</li>
+                    <li><strong>2. Diseño del sistema:</strong> Se crea la arquitectura, interfaces y base de datos del sistema.</li>
+                    <li><strong>3. Desarrollo o Implementación:</strong> Se programa el sistema según el diseño aprobado.</li>
+                    <li><strong>4. Pruebas y Validación:</strong> Se verifican errores y se asegura que el sistema cumple los requisitos.</li>
+                    <li><strong>5. Despliegue:</strong> Se despliega el sistema en producción y se capacita a los usuarios.</li>
+                    <li><strong>6. Mantenimiento y Actualización:</strong> Se corrigen errores, se actualiza y optimiza el sistema continuamente.</li>
+                <h5> Amazon Web Services (AWS). (s.f.). ¿Qué es el ciclo de vida del desarrollo de software (SDLC)?. Recuperado el 15 de febrero de 2025, de<a href="https://aws.amazon.com/es/what-is/sdlc/"> https://aws.amazon.com/es/what-is/sdlc/</a></h5>
+                </ul>
+            </Section>
+
+            <!-- Pregunta 15 -->
+            <section>
+                <h2>15. ¿Cuál es el ciclo de desarrollo de sistemas de información?</h2>
+                <p>El Ciclo de Desarrollo de Sistemas de Información es un proceso estructurado que se basa en el Ciclo de Vida del Desarrollo de Software (SDLC) y puede seguir distintos modelos de desarrollo como Cascada, Ágil o Espiral.</p>
+                <h3>Fases del Ciclo de Desarrollo de Sistemas de Información</h3>
+                <ol>
+                    <!--Aqui hardcoree una lista numerica-->
+                    <li><strong>1. Planificación:</strong> Se identifican problemas, objetivos y viabilidad del sistema.</li>
+                    <li><strong>2. Definición o análisis de requisitos:</strong> Se definen y documentan las necesidades del usuario.</li>
+                    <li><strong>3. Diseño:</strong> Se establece la arquitectura, interfaces y base de datos.</li>
+                    <li><strong>4. Desarrollo del software:</strong> Se codifican los módulos y funcionalidades del sistema.</li>
+                    <li><strong>5. Pruebas:</strong> Se verifican errores y se optimiza el sistema antes del lanzamiento.</li>
+                    <li><strong>6. Implementación y Despliegue:</strong> Se instala el sistema y se capacita a los usuarios.</li>
+                    <li><strong>7. Operaciones y mantenimiento:</strong> Se aplican correcciones, mejoras y actualizaciones continuas.</li>
+                </ol>
+                <h5> Ortega, K. (23 de diciembre de 2022). Las 7 etapas del ciclo de vida del Desarrollo de Software. Avenu Global. Recuperado el 15 de febrero de 2025, de<a href="
+                    https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc"> https://www.avenuglobal.com/blog/cuales-son-las-etapas-del-ciclo-de-vida-del-desarrollo-de-software-etapas-del-sdlc</a></h5>
+           
+            
+            </section>
+            
+                <h2>Laboratorio 3 CSS</h2>
+                <h3>=Cuestionario=</h3>
+
+            </section>
+
+            <!-- Pregunta 1 -->
+            <section>
+              
+                <h3>1. Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3>
+               
+                <p>Se debe usar <strong><code>&lt;!important&gt;</code></strong> con mucho cuidado, y no debes abusar de su uso ya que como vimos en clase es un primer paso para el código espagueti, ya que este cambia el estilo ignorando cualquier regla de estilo antes, si abusas de el puedes quedar 
+                    con un código donde no sepas donde editar o cambiar algún estilo, provocando problemas de mantenimiento en la pagina web. </p>
+                
+            </section>
+
+            <!-- Pregunta 2 -->
+            <section>
+               
+                <h3>2. Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </h3>
+               
+                <p>Por que hacer una mala elección puede afectar negativamente la experiencia del usuario y el desempeño del sitio web, así que algunos puntos que debes tomar en cuenta son</p>
+                <ul>
+                    <li><strong>Rendimiento y carga del sitio:</strong></li>
+                    <ul>
+                        <li>Imágenes pesadas ralentizan la carga del sitio </li>
+                    </ul>
+
+                    <li><strong>Legibilidad:</strong></li>
+                    <ul>
+                        <li>Fondos muy detallados dificultan la lectura del texto.</li>
+                    </ul>
+
+                    <li><strong>Adaptabilidad:</strong></li>
+                    <ul>
+                        <li> La imagen debe ajustarse a todas las pantallas.</li>
+                    </ul>
+
+                    <li><strong>Contraste:</strong></li>
+                    <ul>
+                        <li> Fondos llamativos pueden afectar la visibilidad de los elementos</li>
+                    </ul>
+
+                    <li><strong>Derechos de autor</strong></li>
+                </ul>
+                <h5> IONOS. (s.f.). _Cómo diseñar fondos para páginas web perfectos_. Recuperado de <a href="https://www.ionos.com/es-us/digitalguide/paginas-web/creacion-de-paginas-web/fondos-para-paginas-web/"> [https://www.ionos.com/es-us/digitalguide/paginas-web/creacion-de-paginas-web/fondos-para-paginas-web/</a></h5>
+            </section>
+
+            <!-- Pregunta 3 -->
+            <section>
+               
+                <h3> Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </h3>
+               
+                <ul>
+                    <li><strong>%(Porcentajes):</strong></li>
+                    <ul>
+                        <li>Mejor para diseño flexible y responsiva.</li>
+                        </li>Útil en <strong>layouts responsivos</strong> y propiedades como <strong>width y height</strong>.</li>
+                    </ul>
+
+                    <li><strong>px (Píxeles):</strong></li>
+                    <ul>
+                        <li>Útil para elementos con tamaño fijo.</li>
+                        <li>No es escalable, pero garantiza precisión </li>
+                        <li>Recomendado para <strong>bordes, imágenes y pequeñas distancias</strong>.</li>
+                    </ul>
+
+                    <li><strong>pt (Puntos):</strong></li>
+                    <ul>
+                        <li>No recomendado para web.</li>
+                        <li>Se usa más en impresión, no en pantallas digitales.</li>
+                        <li>No es adaptable en dispositivos</li>
+                    </ul>
+                </ul>
+                <h5>  Mozilla Developer Network. (s.f.). _Valores y unidades CSS - Aprende desarrollo web_. Recuperado de  <a href="[https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Values_and_units">https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Values_and_units</a></h5>
+            </section>
+
+            <!-- Pregunta 4 -->
+            <section>
+               
+                <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio? </h3>
+               
+                <ul>
+                    <li>Reducción del tamaño del archivo</li>
+                    <li>Menos solicitudes HTTP/ Carga mas rápida</li>
+                    <li>Mayor eficiencia en la caché</li>
+                    <li>Mejor rendimiento en dispositivos móviles</li>
+                </ul>
+                <h5> Mozilla Developer Network. (s.f.). _Optimización del rendimiento web - Minificación de CSS y JavaScript_. Recuperado el 19 de febrero de 2025, de  <a href="https://developer.mozilla.org/es/docs/Web/Performance/Optimizing_CSS">https://developer.mozilla.org/es/docs/Web/Performance/Optimizing_CSS</a></h5>
+            </section>
+
+            <section>
+                <h2>=laboratorio 4=</h2>
+                <h3>=Problemas=</h3>
+            </section>
+
+            <section>
+                <h3>Problemas 1</h3>
+                <button  id="boton_problema_1">Tabla</button>
+                <div id="contenido_tabla"></div> <!-- Aquí se insertará la tabla -->
+            </section>
+
+            <section>
+                <h3>Problemas 2</h3>
+                <button class="button is-light" id="boton_problema_2">Resultado Suma</button>
+                <div id="resultado_suma"></div> <!--Aquí se insertará el resultado de la suma--> 
+            </section>
+
+            <section>
+                <h3>Problemas 3</h3>
+                <button  id="boton_problema_3">Resultado contador</button>
+                <div id="resultado_contador"></div> <!--Aquí se insertará el resultado de la suma--> 
+            </section>
+
+            <section>
+                <h3>Problemas 4</h3>
+                <button  id ="boton_problema_4">Resultado contador</button>
+                <div id="resultado_promedios"></div> <!--Aquí se insertará el resultado de la suma--> 
+            </section>
+
+            <section>
+                <h3>Problemas 5</h3>
+                <button id= "boton_problema_5">Resultado promedios F-matriz</button>
+                <div id="resultado_inverso"></div> <!--Aquí se insertará el resultado de la suma--> 
+            </section>
+
+            <section>
+                <h3>Problemas 6</h3>
+                <h4>Descripción</h4>
+                <p>Este problema consiste en la implementación de una <strong>calculadora básica</strong>  que realiza <strong>suma, resta, multiplicación y división.</strong> 
+                Fue originalmente resuelto en str C++ en la clase de Programación Orientada a Objetos (POO) del segundo semestre, donde se creó una clase Calculadora 
+                con métodos similares, Ahora, en JavaScript, la solución se ha adaptado el codigo para que sea interactiva, permitiendo la entrada de datos 
+                con prompt() y mostrando los resultados en el HTML con getElementById(). Además, se maneja la división por cero para evitar errores.</p>
+                <button id = "boton_problema_6">Resultado calculadora</button>
+                <div id="resultado_calculadora"></div> <!--Aquí se insertará el resultado de la suma--> 
+            </section>
+
+            <section>
+                <h3>=Cuestionario=</h3>
+            </section>
+
+            <!-- Pregunta 1 -->
+            <section>
+               
+                <h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript? </h3>
+               
+                <h4>Diferencias</h4>
+                <ul>
+                    <li><strong>Tipo de lenguaje:</strong></li>
+                    <ul><li> Java es un lenguaje compilado y orientado a objetos, mientras que JavaScript es un lenguaje interpretado y basado en prototipos.</li></ul>
+                    <li><strong>Ejecución:</strong></li>
+                    <ul><li> Java se ejecuta en la Java Virtual Machine, mientras que JavaScript se ejecuta en navegadores web o entornos como Node.js.</li></ul>
+                    <li><strong>Uso principal:</strong></li>
+                    <ul><li> Java se usa en aplicaciones empresariales y backend, mientras que JavaScript se usa en desarrollo web, frontend y backend</li></ul>
+                </ul>
+                <h4>Ventajas</h4>
+                <ul>
+                    <li><strong> Sintaxis similar:</strong></li>
+                    <ul><li> Ambos usan una sintaxis parecida basada en C.</li></ul>
+                    <li> <strong>Multiplataforma:</strong></li>
+                    <ul><li> Ambos pueden ejecutarse en diferentes sistemas operativos.</li></ul>
+                </ul>
+                <h5> Mozilla Developer Network. (s.f.). _Diferencias entre Java y JavaScript_. Recuperado el 19 de febrero de 2025, de <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/JavaScript_and_Java">https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/JavaScript_and_Java</a></h5>
+            </section>
+            
+            <!-- Pregunta 2 -->
+           
+            <section>
+                <h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h3>
+
+                <ul>
+                    <li><code>&lt;Date.now()&gt;</code>->Devuelve la fecha en milisegundos</li>
+                    <li><code>&lt;getFullYear()&gt;</code> -> Retorna el año de la fecha.</li>
+                    <li><code>&lt;getHours()&gt;</code>->Retorna la hora</li>
+                    <li><code>&lt;getMonth()&gt;</code>->Retorna el mes</li>
+                    <li><code>&lt;getDate()&gt;</code>->Devuelve el día del mes</li>
+                </ul>
+                <h5>Mozilla Developer Network. (s.f.). _Date - JavaScript_. Recuperado el 19 de febrero de 2025, de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</a></h5>
+            </section>
+            
+            <!-- Pregunta 3 -->
+            <section>
+                <h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h3>
+
+                <ul>
+                    <li><code>&lt;push(valor)&gt;</code>->Agrega un elemento al final del arreglo.</li>
+                    <li><code>&lt;pop()&gt;</code> -> Elimina y retorna el último elemento. </li>
+                    <li><code>&lt;shift()&gt;</code>-> Elimina y retorna el primer elemento.</li>
+                    <li><code>&lt;concat(array)&gt;</code>-> Une dos arreglos y devuelve uno nuevo.</li>
+                    <li><code>&lt;indexOf(valor)&gt;</code>-> Devuelve la posición del elemento o -1 si no existe.</li>
+                </ul>
+                <h5>Mozilla Developer Network. (s.f.). _Array - JavaScript_. Recuperado el 19 de febrero de 2025, de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></h5>
+            </section>
+
+             <!-- Pregunta 4 -->
+            <section>
+                <h3>¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+
+                <p>Una variable con <strong>alcance local</strong> se declara dentro de una función usando let o const, y solo es accesible dentro de esa función.</p>
+
+                <h5>Oracle. (s.f.). _Variables (Java Platform SE 8)_. Recuperado el 19 de febrero de 2025, de <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html</a></h5>
+            </section>
+
+            <!-- Pregunta 5 -->
+            <section>
+                <h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+                
+                <ul>
+                    <li>Riesgo de sobreescritura </li>
+                    <li>Problemas en entornos multiusuario</li>
+                    <li>Reduce modularidad y reutilización</li>
+                    <li>Riesgo de repetición de nombres</li>
+                </ul>
+
+                <h5>Mozilla Developer Network. (s.f.). _Variables - JavaScript_. Recuperado el 19 de febrero de 2025, de  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables</a></h5>
+            </section>
+           
+            <!--Aplicacion de foma de control tipo <input type="radio"> Botones de opción (selección única)-->
+            <!--Aplicacion de foma de boton tipo button type="submit"> Botones de envio-->
+            <section>
+                <!-- Sección para la encuesta de opinión -->
+                <h3>¿Te gustó mi página?</h3>
+                <!-- Inicio del formulario -->
+                <!--especifica que los datos se enviarán a procesar_respuesta.php-->
+                <!--utilizando el método POST (para que la información no sea visible en la URL)-->
+                <form action="procesar_respuesta.php" method="post">
+                    <!-- Opción "Sí, me gustó" -->
+                    <!--<label> y <input type="radio" Crea botones de opción (radio buttons), donde los usuarios solo pueden seleccionar una opción.-->
+                    <label>
+                         <!-- Botón de opción (radio) para seleccionar "Sí" -->
+                         <!--El atributo name="opinion" agrupa los botones-->
+                         <!--value="si" y value="no" definen el valor que se enviará al servidor-->
+                         <!--required obliga a seleccionar una opción antes de enviar el formulario.-->
+                         <input type="radio" name="opinion" value="si" required> Sí, me gustó
+                    <!-- <br Agrega un salto de línea para separar opciones -->
+                    </label><br>
+                    <!-- Opción "No, podría mejorar" -->
+                    <label>
+                        <input type="radio" name="opinion" value="no" required> No, podría mejorar
+                    </label><br>
+                    <!-- Botón de envío del formulario -->
+                    <button  type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <section>
+
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <!-- Información sobre el editor usado -->
+            <p>Editor utilizado: Visual Studio Code</p> 
+            <!-- Enlace a la página oficial de VS Code -->
+            <!--<a Es una etiqueta de anclaje-->
+            <!-- href Especifica la URL a la que dirigirá el enlace.-->
+            <p>Más información en <a href="https://code.visualstudio.com/">Visual Studio Code</a></p> <!-- Enlace a la página oficial de VS Code -->
+        </footer>
+        <!--<script src="jar/introjs.js"></script>-->
+        <script src="../applab08.js"></script> <!-- Enlazamos el archivo JavaScript -->
+    </body>
+</html>
