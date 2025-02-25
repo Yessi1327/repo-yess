@@ -38,5 +38,7 @@ app.use((request, response, next) => {
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
 
+// 404 tiene que ser tu ultimo midelware
+
 //escucha por el puerto 3000
 app.listen(3000);
