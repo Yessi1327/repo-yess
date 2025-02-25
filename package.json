@@ -4,7 +4,6 @@
   "description": "Laboratorios de TC2005B feb-jun 2025 QRO Yessica",
   "main": "app.js",
   "scripts": {
-
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +23,8 @@
   "homepage": "https://github.com/Yessi1327/repo-yess#readme",
   "devDependencies": {
     "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }
