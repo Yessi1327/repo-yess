@@ -80,7 +80,7 @@ const html_header = `
             </h1>
             `;
 //Forma para pedir la información
-const html_form = `<form action="/agregar" method="POST">
+const html_form = `<form action="/plantas/agregar" method="POST">
               <label for="nombre" class="label">Nombre de la planta</label>
               <input
                 class="input is-info"
@@ -117,6 +117,13 @@ const express = require('express');
 // las combenciones dicen que le pongas app
 const app = express();
 
+// esta lienea esta hasta arriba por que quieres
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+const plantas = [];
+
 //express funciona atravez de middleware usando use y recibe tres 
 // parametros request: peticion response: respuesta, hay gente que le pone req y resp
 //next lo que hace es pasar al siguiente midelware
@@ -136,6 +143,30 @@ app.use("/plantas/agregar",(request, response, next)=> {
 
 //para peticiones http GET
 app.get("/plantas/agregar",(request, response, next)=> {
+    response.send(html_header+html_form+html_footer);
+});
+
+//para peticiones http GET
+app.post("/plantas/agregar",(request, response, next)=> {
+    //Hace un objeto tipo request
+    console.log(request.body);
+
+    plantas.push(request.body.nombre);
+    let html = html_header;
+    html += `<div class="columns">`;
+    for (let planta of plantas){
+        html += `<div class="column">`;
+        html += `<div class="card">
+          <div class="card-content">
+          <div class="content">`;
+        html += planta;
+        html += `</div>
+            </div>
+          </div>`
+    }
+    html +=`</div>`
+    html +=`</div>`
+    html +=html_footer,
     response.send(html_header+html_form+html_footer);
 });
 
