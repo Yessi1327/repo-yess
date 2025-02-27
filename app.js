@@ -5,7 +5,12 @@ const express = require('express');
 const app = express();
 
 const path = require("path");
+//dirname es para que se haga la ruta ccompleta de un directorio
 app.use(express.static(path.join(__dirname, "public")));
+
+//Para usar el motor de templates de ejs
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 // PARA QUE libreria
 const bodyParser = require("body-parser");
