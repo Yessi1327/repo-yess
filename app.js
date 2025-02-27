@@ -4,6 +4,9 @@ const express = require('express');
 //Incvocas el constructor de express y hace la app y la guarda en el servidor de app las combenciones dicen que le pongas ap
 const app = express();
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
 // PARA QUE libreria
 const bodyParser = require("body-parser");
 // aqui configure que utilice el body parser
