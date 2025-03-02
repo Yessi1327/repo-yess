@@ -118,7 +118,7 @@ function problema3(){
     Cero: ${resultado_contador.ceros}
     </p>
     <p>
-    Cero: ${resultado_contador.positivos}
+    Número positivos: ${resultado_contador.positivos}
     </p>`
     
 }
