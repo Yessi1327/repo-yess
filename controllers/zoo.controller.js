@@ -13,10 +13,9 @@ exports.post_agregar = (request, response, next)=> {
 
     const mi_animal = new Animal (request.body.nombre);
     mi_animal.save();
+    response.redirect("/zoo/");
 
-    response.render('lista_animales', {
-      animales: Animal.fetchAll(),
-    });
+   
 };
 
 exports.get_alimentar= (request,response, next)=>{
@@ -26,3 +25,8 @@ exports.get_alimentar= (request,response, next)=>{
   response.sendFile(path.join(__dirname, "..", "views", "index.html"));
 };
 
+exports.get_root = (request, response, next)=>{
+    response.render('lista_animales', {
+        animales: Animal.fetchAll(),
+      });
+};

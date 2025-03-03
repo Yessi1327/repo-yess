@@ -14,5 +14,7 @@ router.post("/agregar",animales_controller.post_agregar);
 //para peticiones http GET
 router.get("/alimentar", animales_controller.get_alimentar);
 
+router.get("/", animales_controller.get_root)
+
 // Esto es lo que estoy importando el router
 module.exports = router;
