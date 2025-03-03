@@ -5,6 +5,7 @@ const animales_controller= require("../controllers/zoo.controller")
 
 //para peticiones http GET
 router.get("/agregar",animales_controller.get_agregar);
+router.get("/add",animales_controller.get_agregar)
 
 //para peticiones http POST
 router.post("/agregar",animales_controller.post_agregar);
