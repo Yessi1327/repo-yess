@@ -1,6 +1,5 @@
 const path = require("path")
-//Se deben pasar las variables y arreglos o funciones necesarias para tus controladores 
-const animales = [];
+const Animal =require("../models/animal.models");
 
 //se le llama accion del controlador get_agregar
 exports.get_agregar =(request, response, next)=> {
@@ -12,9 +11,11 @@ exports.post_agregar = (request, response, next)=> {
     //Hace un objeto tipo request
     console.log(request.body);
 
-    animales.push(request.body.nombre);
+    const mi_animal = new Animal (request.body.nombre);
+    mi_animal.save();
+
     response.render('lista_animales', {
-      animales: animales,
+      animales: Animal.fetchAll(),
     });
 };
 
