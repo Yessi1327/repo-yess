@@ -20,7 +20,7 @@ exports.post_agregar = (request, response, next)=> {
 
 exports.get_alimentar= (request,response, next)=>{
   
-  //Leer un documento,y path join junta los pedazoss de la ruta al doc
+  //Leer un documento,y path join junta los pedazos de la ruta al doc
   //por que si no deberias usar la ruta absoluta
   response.sendFile(path.join(__dirname, "..", "views", "index.html"));
 };
