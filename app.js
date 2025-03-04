@@ -6,6 +6,15 @@ const bodyParser = require("body-parser");
 //Incvocas el constructor de express y hace la app y la guarda en el servidor de app las combenciones dicen que le pongas ap
 const app = express();
 
+const session = require('express-session');
+
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
+
 //dirname es para que se haga la ruta completa de un directorio
 app.use(express.static(path.join(__dirname, "public")));
 
