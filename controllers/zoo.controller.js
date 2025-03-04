@@ -22,11 +22,11 @@ exports.get_alimentar= (request,response, next)=>{
   
   //Leer un documento,y path join junta los pedazos de la ruta al doc
   //por que si no deberias usar la ruta absoluta
-  response.sendFile(path.join(__dirname, "..", "views", "index.html"));
+  response.sendFile(path.join(__dirname, "..", "views", "index.html"),{ title: 'Alimentar animales' });
 };
 
 exports.get_root = (request, response, next)=>{
-    response.render('lista_animales', {
+    response.render('lista_animales',{
         animales: Animal.fetchAll(),
       });
 };

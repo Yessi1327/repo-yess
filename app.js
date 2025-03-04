@@ -16,10 +16,13 @@ app.set('views', 'views');
 // Aqui configure que utilice el body parser en vez de use
 app.use(bodyParser.urlencoded({extended: false}));
 
-//PARA que importar un modulo
+//importar un modulo
 const zooRoutes = require("./routes/zoo.routes");
 //PARA QUE el router se lo cuelgas a las demas rutas
 app.use('/zoo', zooRoutes);
+
+const infoRoutes = require("./routes/info.routes");
+app.use('/zoo/info', infoRoutes);
 
 // 404 tiene que ser tu ultimo midelware
 // send es la combinacion de las tres lineas el set header el write y el end 
