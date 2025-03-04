@@ -1,5 +1,20 @@
 [
-  { "nombre": "Tigre" },
-  { "nombre": "Orca" },
-  { "nombre": "Lobo" }
+  {
+    "nombre": "Tigre"
+  },
+  {
+    "nombre": "Orca"
+  },
+  {
+    "nombre": "Lobo"
+  },
+  {
+    "nombre": "Elefante"
+  },
+  {
+    "nombre": "Leon"
+  },
+  {
+    "nombre": "Ñu"
+  }
 ]
