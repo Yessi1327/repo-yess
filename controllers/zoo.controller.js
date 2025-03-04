@@ -25,6 +25,7 @@ exports.get_alimentar= (request,response, next)=>{
   response.sendFile(path.join(__dirname, "..", "views", "index.html"));
 };
 
+// Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
     response.render('lista_animales',{
         animales: Animal.fetchAll(),

@@ -7,14 +7,13 @@ const filePath = path.join(__dirname, '..', 'data', 'animales.txt');
 //Se deben pasar las variables y arreglos o funciones necesarias para tus controladores 
 let animales = [];
 
-// Cargar datos desde el archivo al iniciar el servidor
+// Cargar datos desde el archivo al iniciar el servidor para despues poder ponerlo en la pagina
 fs.readFile(filePath, (error, data) => {
     if (!error && data.length > 0) {
         animales = JSON.parse(data); // Cargar los datos al arreglo en memoria
     }
 });
 
-//const animales = [{nombre: 'Tigre'}, {nombre: 'Orca'}, {nombre: 'lobo'}];
 
 module.exports = class Animal {
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
@@ -25,7 +24,7 @@ module.exports = class Animal {
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         animales.push({ nombre: this.nombre });
-         // Guardar el arreglo actualizado en el archivo
+         // Escribe el arreglo actualizado en el archivo de texto
          fs.writeFile(filePath, JSON.stringify(animales, null, 2), error => {
             if (error) console.log("Error al escribir en el archivo:", error);
         });
