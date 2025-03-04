@@ -26,12 +26,18 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 
 //importar un modulo
+
 const zooRoutes = require("./routes/zoo.routes");
 //PARA QUE el router se lo cuelgas a las demas rutas
 app.use('/zoo', zooRoutes);
 
+const usersRoutes = require("./routes/users.routes");
+app.use('/users', usersRoutes);
+
 const infoRoutes = require("./routes/info.routes");
-app.use('/zoo/info', infoRoutes);
+app.use('/info', infoRoutes);
+
+
 
 // 404 tiene que ser tu ultimo midelware
 // send es la combinacion de las tres lineas el set header el write y el end 

@@ -3,7 +3,7 @@ const Animal =require("../models/animal.models");
 
 //se le llama accion del controlador get_agregar
 exports.get_agregar =(request, response, next)=> {
-    //response.send(html_header+html_form+html_footer);
+    console.log(request.session.username);
     response.render('agregar_animal');
     };
 
@@ -13,7 +13,7 @@ exports.post_agregar = (request, response, next)=> {
 
     const mi_animal = new Animal (request.body.nombre);
     mi_animal.save(); // Guarda en el arreglo y en el archivo
-    response.redirect("/zoo/");
+    response.redirect("/zoo");
 
    
 };
