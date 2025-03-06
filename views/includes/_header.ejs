@@ -79,7 +79,9 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
+                <!--Ahora estas logeado y ya no sale Log in-->
                 <% if (isLoggedIn) { %>
+                  <%= username %> / 
                   <a href="/users/logout" class="button is-danger">
                       Logout
                     </a>

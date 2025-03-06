@@ -9,6 +9,7 @@ exports.get_agregar =(request, response, next)=> {
     
     response.render('agregar_animal', {
       isLoggedIn: request.session.isLoggedIn || false,
+      username: request.session.username || '',
   });
 
 };
@@ -35,6 +36,7 @@ exports.get_alimentar= (request,response, next)=>{
 exports.get_root = (request, response, next)=>{
     response.render('lista_animales',{ 
        isLoggedIn: request.session.isLoggedIn || false,
+       username: request.session.username || '',
        animales: Animal.fetchAll(),
       });
 };

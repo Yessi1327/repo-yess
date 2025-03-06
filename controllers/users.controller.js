@@ -2,6 +2,7 @@ exports.get_login = (request, response, next) => {
     
     response.render('login.ejs', {
         isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
     });
 };
 
