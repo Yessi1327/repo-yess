@@ -21,9 +21,10 @@ exports.post_agregar = (request, response, next)=> {
 
     const mi_animal = new Animal (request.body.nombre);
     mi_animal.save(); // Guarda en el arreglo y en el archivo
+
+    response.setHeader('Set-Cookie', `ultima_planta=${mi_planta.nombre}`);
     response.redirect("/zoo");
 
-   
 };
 
 exports.get_alimentar= (request,response, next)=>{
@@ -35,6 +36,7 @@ exports.get_alimentar= (request,response, next)=>{
 
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
+    console.log(request.get('Cookie'));
     response.render('lista_animales',{ 
       //QUE HACE
        isLoggedIn: request.session.isLoggedIn || false,
