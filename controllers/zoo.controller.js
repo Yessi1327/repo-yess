@@ -3,9 +3,15 @@ const Animal =require("../models/animal.models");
 
 //se le llama accion del controlador get_agregar
 exports.get_agregar =(request, response, next)=> {
+    
+  //Imprime variable guardada del usuario
     console.log(request.session.username);
-    response.render('agregar_animal');
-    };
+    
+    response.render('agregar_animal', {
+      isLoggedIn: request.session.isLoggedIn || false,
+  });
+
+};
 
 exports.post_agregar = (request, response, next)=> {
     //Hace un objeto tipo request
@@ -27,7 +33,8 @@ exports.get_alimentar= (request,response, next)=>{
 
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
-    response.render('lista_animales',{
-        animales: Animal.fetchAll(),
+    response.render('lista_animales',{ 
+       isLoggedIn: request.session.isLoggedIn || false,
+       animales: Animal.fetchAll(),
       });
 };

@@ -30,6 +30,8 @@
             <a href="/zoo/info/historia" class="navbar-item">
               Home
             </a>
+
+            <% if (isLoggedIn) { %>
       
             <a href="/zoo/agregar" class="navbar-item">
               Agregar Animal
@@ -47,6 +49,8 @@
             <a href="/info/horarios" class="navbar-item">
               Horarios
             </a>
+
+            <% } %>
 
             <!--Menu desplegable-->
             <div class="navbar-item has-dropdown is-hoverable">
@@ -75,12 +79,18 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
+                <% if (isLoggedIn) { %>
+                  <a href="/users/logout" class="button is-danger">
+                      Logout
+                    </a>
+                  <% } else { %>
                 <a class="button is-primary">
                   <strong>Sign up</strong>
                 </a>
                 <a href="/users/login" class="button is-light">
                   Log in
                 </a>
+                <% } %>
               </div>
             </div>
           </div>
