@@ -1,8 +1,10 @@
-const { error } = require('console');
+const { error, Console } = require('console');
 const fs = require('fs');
 const path = require('path');
 
+const db = require("../util/database")
 const filePath = path.join(__dirname, '..', 'data', 'animales.txt'); 
+
 
 //Se deben pasar las variables y arreglos o funciones necesarias para tus controladores 
 let animales = [];
@@ -23,7 +25,19 @@ module.exports = class Animal {
       
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        animales.push({ nombre: this.nombre });
+        //Para trabajar con promesas usamos then y catch
+
+        db.execute("Insert Into animales(nombre) VALUES (?)", [this.nombre])
+        //Funcion que se ejecuta si la promesa se cumple
+        .then(()=>{
+            console.log("animal guardado");
+        })
+        //Funcion que se ejecuta si la promesa no se cumple
+        .catch((error)=>{
+            console.log(error);
+        });
+
+        //animales.push({ nombre: this.nombre });
          // Escribe el arreglo actualizado en el archivo de texto
          fs.writeFile(filePath, JSON.stringify(animales, null, 2), error => {
             if (error) console.log("Error al escribir en el archivo:", error);

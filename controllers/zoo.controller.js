@@ -7,9 +7,9 @@ exports.get_agregar =(request, response, next)=> {
   //Imprime variable guardada del usuario
     console.log(request.session.username);
     
+    //QUE HACE?
     response.render('agregar_animal', {
-      //QUE HACE?
-      isLoggedIn: request.session.isLoggedIn || false,
+      isLoggedIn: request.session.isLoggedIn || false, 
       username: request.session.username || '',
   });
 
