@@ -22,7 +22,7 @@ exports.post_agregar = (request, response, next)=> {
     const mi_animal = new Animal (request.body.nombre);
     mi_animal.save(); // Guarda en el arreglo y en el archivo
 
-    response.setHeader('Set-Cookie', `ultima_planta=${mi_planta.nombre}`);
+    response.setHeader('Set-Cookie', `ultimo_animal=${mi_animal.nombre}`);
     response.redirect("/zoo");
 
 };
