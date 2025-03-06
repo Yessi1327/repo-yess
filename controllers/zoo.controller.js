@@ -8,6 +8,7 @@ exports.get_agregar =(request, response, next)=> {
     console.log(request.session.username);
     
     response.render('agregar_animal', {
+      //QUE HACE?
       isLoggedIn: request.session.isLoggedIn || false,
       username: request.session.username || '',
   });
@@ -35,6 +36,7 @@ exports.get_alimentar= (request,response, next)=>{
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
     response.render('lista_animales',{ 
+      //QUE HACE
        isLoggedIn: request.session.isLoggedIn || false,
        username: request.session.username || '',
        animales: Animal.fetchAll(),
