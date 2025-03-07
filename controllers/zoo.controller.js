@@ -27,6 +27,7 @@ exports.post_agregar = (request, response, next)=> {
     /*response.setHeader('Set-Cookie', `ultimo_animal=${mi_animal.nombre}`);
     response.redirect("/zoo/");*/
 
+  //Se movio la logica del modelo al controlador
     .then(() => {
         console.log("animal guardado");
         response.redirect('/zoo/');
