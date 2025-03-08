@@ -1,4 +1,12 @@
 <%- include('includes/_header') %>
+
+<!--Mensaje de notificación-->
+<% if (info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
 <div class="columns">
 <!--Manda a llamar nuestro arreglo actualizado de animales-->
 <% for(let animal of animales) { %>

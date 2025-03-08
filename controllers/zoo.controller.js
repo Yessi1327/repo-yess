@@ -29,7 +29,10 @@ exports.post_agregar = (request, response, next)=> {
 
   //Se movio la logica del modelo al controlador
     .then(() => {
-        console.log("animal guardado");
+        //console.log("animal guardado");
+        //Mensaje de confirmación
+        request.session.info = `El animal ${mi_animal.nombre} se ha creado`;
+
         response.redirect('/zoo/');
     })
     .catch((error) => {
@@ -46,11 +49,17 @@ exports.get_alimentar= (request,response, next)=>{
 
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
-    console.log(request.get('Cookie'));
+    //console.log(request.get('Cookie'));
+    //Mensaje de confirmación
+    const mensaje = request.session.info || '';
+    if (request.session.info) {
+        request.session.info = '';
+    }
     response.render('lista_animales',{ 
       //QUE HACE
        isLoggedIn: request.session.isLoggedIn || false,
        username: request.session.username || '',
        animales: Animal.fetchAll(),
+       info: mensaje,
       });
 };
