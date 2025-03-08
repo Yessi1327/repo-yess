@@ -8,7 +8,7 @@ const filePath = path.join(__dirname, '..', 'data', 'animales.txt');
 const db = require("../util/database")
 
 //Se deben pasar las variables y arreglos o funciones necesarias para tus controladores 
-let animales = [];
+//let animales = [];
 
 // Cargar datos desde el archivo al iniciar el servidor para despues poder ponerlo en la pagina
 fs.readFile(filePath, (error, data) => {
@@ -52,6 +52,9 @@ module.exports = class Animal {
       
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-     return animales;
+     //return animales;
+    
+     //Saca registros de la Base de Datos
+     return db.execute('SELECT * FROM animales');
     }
  }

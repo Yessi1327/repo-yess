@@ -55,11 +55,27 @@ exports.get_root = (request, response, next)=>{
     if (request.session.info) {
         request.session.info = '';
     }
-    response.render('lista_animales',{ 
+    /*response.render('lista_animales',{ 
       //QUE HACE
        isLoggedIn: request.session.isLoggedIn || false,
        username: request.session.username || '',
        animales: Animal.fetchAll(),
        info: mensaje,
+      });*/
+      
+      //Sacar registros de la BD
+      Animal.fetchAll()
+      .then(([rows, fieldData]) => {
+          console.log(fieldData);
+          console.log(rows);
+          response.render('lista_animales', {
+              isLoggedIn: request.session.isLoggedIn || false,
+              username: request.session.username || '',
+              //Nombre de la tabla
+              animales: rows,
+              info: mensaje,
+          });
+      }).catch((error) => {
+          console.log(error);
       });
 };
