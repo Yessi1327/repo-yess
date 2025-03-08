@@ -15,7 +15,9 @@
             <div class="card-content">
                 <div class="content">
                     <!--Aqui manda a llamar al los nomres de los objetos de los animales-->
-                    <%= animal.nombre %>
+                    <!--<%= animal.nombre %>-->
+                    <a href="/zoo/<%= animal.id %>"><%= animal.nombre %></a>
+                    <p><%= animal.created_at %></p>
                 </div>
             </div>
         </div>

@@ -57,4 +57,17 @@ module.exports = class Animal {
      //Saca registros de la Base de Datos
      return db.execute('SELECT * FROM animales');
     }
+
+    //metodo para crear vistas dinamicas
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM animales WHERE id = ?', [id]);
+    }
+    static fetch(id) {
+        if (id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
+    }
+    
  }

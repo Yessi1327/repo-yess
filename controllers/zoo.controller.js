@@ -63,8 +63,8 @@ exports.get_root = (request, response, next)=>{
        info: mensaje,
       });*/
       
-      //Sacar registros de la BD
-      Animal.fetchAll()
+      //Sacar registros de la BD Y Vistas Dinamicas
+      Animal.fetch(request.params.id)
       .then(([rows, fieldData]) => {
           console.log(fieldData);
           console.log(rows);
