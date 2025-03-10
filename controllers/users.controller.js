@@ -1,9 +1,30 @@
+const Usuario = require('../models/users.model');
+
+exports.get_signup = (request, response, next) => {
+    response.render("login.ejs",{
+    isLoggedIn: request.session.isLoggedIn || false,
+    username: request.session.username || '',
+    isNew: true,
+    });
+};
+
+exports.post_signup = (request, response, next) =>{
+    const usuario = new 
+        Usuario(request.body.username, request.body.password);
+    usuario.save().then(() => {
+        response.redirect('/users/login');
+    }).catch((error) => {
+        console.log(error);
+    });
+};
+
 exports.get_login = (request, response, next) => {
     
     response.render('login.ejs', {
         //QUE HACE
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        isNew: false,
     });
 };
 
