@@ -11,6 +11,7 @@ exports.get_agregar =(request, response, next)=> {
     response.render('agregar_animal', {
       isLoggedIn: request.session.isLoggedIn || false, 
       username: request.session.username || '',
+      csrfToken: request.csrfToken(),
   });
 
 };
@@ -49,7 +50,7 @@ exports.get_alimentar= (request,response, next)=>{
 
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
-  
+
     //console.log(request.get('Cookie'));
     //Mensaje de confirmación
     const mensaje = request.session.info || '';
