@@ -12,6 +12,7 @@ exports.get_signup = (request, response, next) => {
     username: request.session.username || '',
     isNew: true,
     info: mensaje,
+    warning: '',
     });
 };
 
@@ -32,12 +33,19 @@ exports.get_login = (request, response, next) => {
         request.session.info = '';
     }
     
+    const warning = request.session.warning || '';
+    if (request.session.warning) {
+        request.session.warning = '';
+    }
+
+
     response.render('login.ejs', {
         //QUE HACE
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
         isNew: false,
         info: mensaje,
+        warning: warning,
     });
 };
 
@@ -54,12 +62,14 @@ exports.post_login = (request, response, next) => {
                         response.redirect('/zoo');
                     });
                 } else {
+                    request.session.warning = `Usuario y/o contraseña incorrectos`;
                     response.redirect('/users/login');
                 }
             }).catch((error) => {
                 console.log(error);
             });
         } else {
+            request.session.warning = `Usuario y/o contraseña incorrectos`;
             response.redirect('/users/login');
         }
     }).catch((error) => {

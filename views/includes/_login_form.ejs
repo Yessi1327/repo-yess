@@ -4,6 +4,12 @@
   </div>
 <% } %>
 
+<% if (warning != '') { %>
+  <div class="notification is-warning">
+      <%= warning %>
+  </div>
+<% } %>
+
 <form action=
   "/users/<% if (isNew) { %>signup<% } else { %>login<% } %>" 
   method="POST"
