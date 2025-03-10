@@ -22,9 +22,10 @@ module.exports = class Usuario {
     static fetchAll() {
         return db.execute('SELECT * FROM usuarios');
     }
-    static fetchOne(id) {
+    static fetchOne(username) {
         return db.execute('SELECT * FROM usuarios WHERE username = ?', [username]);
     }
+    
     static fetch(username) {
         if (username) {
             return this.fetchOne(username);

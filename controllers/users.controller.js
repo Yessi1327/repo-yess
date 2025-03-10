@@ -1,5 +1,6 @@
 const Usuario = require('../models/users.model');
 
+
 exports.get_signup = (request, response, next) => {
     const mensaje = request.session.info || '';
     if (request.session.info) {
@@ -41,10 +42,30 @@ exports.get_login = (request, response, next) => {
 };
 
 exports.post_login = (request, response, next) => {
-    //QUE HACE
-    request.session.isLoggedIn = true;
-    request.session.username = request.body.username;
-    response.redirect('/zoo');
+    
+    Usuario.fetchOne(request.body.username).then(([rows, fieldData]) => {
+        if(rows.length > 0) {
+            const bcrypt = require('bcrypt');
+            bcrypt.compare(request.body.password, rows[0].password).then((doMatch) => {
+                if (doMatch) {
+                    request.session.isLoggedIn = true;
+                    request.session.username = request.body.username;
+                    return request.session.save((error) => {
+                        response.redirect('/zoo');
+                    });
+                } else {
+                    response.redirect('/users/login');
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        } else {
+            response.redirect('/users/login');
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
+    
 };
 
 //Para destruir la sesión
