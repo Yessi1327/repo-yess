@@ -49,6 +49,7 @@ exports.get_alimentar= (request,response, next)=>{
 
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
+  
     //console.log(request.get('Cookie'));
     //Mensaje de confirmación
     const mensaje = request.session.info || '';
