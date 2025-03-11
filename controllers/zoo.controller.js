@@ -48,10 +48,14 @@ exports.get_alimentar= (request,response, next)=>{
   response.sendFile(path.join(__dirname, "..", "views", "index.html"));
 };
 
+
 // Despliega las tarjetas de los animales en la pagina
 exports.get_root = (request, response, next)=>{
 
-    //console.log(request.get('Cookie'));
+  //Recupera los privilegios y los imprime en la consola
+  console.log(request.session.privilegios);
+
+  //console.log(request.get('Cookie'));
     //Mensaje de confirmación
     const mensaje = request.session.info || '';
     if (request.session.info) {
