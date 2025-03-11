@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const isAuth = require('../util/is-auth');
+const canView = require('../util/canViewAnimales');
 
 const animales_controller= require("../controllers/zoo.controller")
 
@@ -22,8 +23,11 @@ router.post('/agregar', isAuth, animales_controller.post_agregar);
 router.get('/alimentar', isAuth, animales_controller.get_alimentar);
 //router.get("/alimentar", animales_controller.get_alimentar);
 
-router.get('/:id', isAuth,  animales_controller.get_root);
-router.get("/", isAuth,  animales_controller.get_root)
+//A BASE DE PRIVILEGIOS
+router.get('/:id', isAuth, canView, animales_controller.get_root);
+router.get('/', isAuth, canView, animales_controller.get_root);
+//router.get('/:id', isAuth,  animales_controller.get_root);
+//router.get("/", isAuth,  animales_controller.get_root)
 
 //router.get('/:id', animales_controller.get_root);
 //router.get("/", animales_controller.get_root)
