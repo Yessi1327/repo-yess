@@ -22,21 +22,19 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-
-
-
-//importar un modulo
-
-const zooRoutes = require("./routes/zoo.routes");
-//PARA QUE el router se lo cuelgas a las demas rutas
-app.use('/zoo', zooRoutes);
-
 // Aqui configure que utilice el body parser en vez de use
 app.use(bodyParser.urlencoded({extended: false}));
 
 const csrf = require('csurf');
 const csrfProtection = csrf(); 
 app.use(csrfProtection); 
+
+//importar un modulo
+
+
+const zooRoutes = require("./routes/zoo.routes");
+//PARA QUE el router se lo cuelgas a las demas rutas
+app.use('/zoo', zooRoutes);
 
 const usersRoutes = require("./routes/users.routes");
 app.use('/users', usersRoutes);

@@ -33,9 +33,17 @@
 
             <% if (isLoggedIn) { %>
       
-            <a href="/zoo/agregar" class="navbar-item">
+           <!--<a href="/zoo/agregar" class="navbar-item">
               Agregar Animal
-            </a>
+            </a>--> 
+
+            <% for (let privilegio of privilegios) { %>
+              <% if(privilegio.nombre == "agregar animales") { %>
+                <a href="/zoo/agregar" class="navbar-item">
+                  Agregar animal
+                </a>
+              <% } %>
+            <% } %>
 
             <a href="/zoo/alimentar" class="navbar-item">
               Alimentar animales

@@ -12,6 +12,7 @@ exports.get_agregar =(request, response, next)=> {
       isLoggedIn: request.session.isLoggedIn || false, 
       username: request.session.username || '',
       csrfToken: request.csrfToken(),
+      privilegios: request.session.privilegios || [],
   });
 
 };
@@ -80,6 +81,7 @@ exports.get_root = (request, response, next)=>{
               //Nombre de la tabla
               animales: rows,
               info: mensaje,
+              privilegios: request.session.privilegios || [],
           });
       }).catch((error) => {
           console.log(error);
