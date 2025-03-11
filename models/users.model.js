@@ -33,4 +33,15 @@ module.exports = class Usuario {
             return this.fetchAll();
         }
     }
+
+    //crear consulta en el modelo para obtener los privilegios de un usuario
+    static getPrivilegios(username) {
+        return db.execute(`
+            SELECT DISTINCT p.nombre
+            FROM privilegios p, posee po, roles r, tiene t, usuarios u
+            WHERE p.id=po.id_privilegio AND po.id_rol=r.id AND r.id=t.id_rol 
+                AND u.id=t.id_usuario AND u.username=?`, 
+            [username]);
+    }
+
 }
