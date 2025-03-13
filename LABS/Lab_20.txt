@@ -1,0 +1,229 @@
+
+-- 1. Los materiales (clave y descripción) entregados al proyecto "México sin ti no estamos completos".
+SELECT DISTINCT M.Clave, M.Descripcion 
+FROM Materiales M
+JOIN Entregan E ON M.Clave = E.Clave
+JOIN Proyectos P ON E.Numero = P.Numero
+WHERE P.Denominacion = 'México sin ti no estamos completos';
+
+Clave	Descripcion	
+1030	Varilla 4/33	
+1230	Cemento 	
+1430	Pintura B1022	
+
+
+-- 2. Los materiales (clave y descripción) que han sido proporcionados por el proveedor "Comex". SE CAMBIO A COMEX 
+SELECT M.Clave, M.Descripcion 
+FROM Materiales M, Entregan E, Proveedores P
+WHERE M.Clave = E.Clave
+AND P.RFC = E.RFC
+AND P.RazonSocial = "Comex";
+
+Clave	Descripcion	
+1050	Varilla 4/34	
+1050	Varilla 4/34	
+1130	Sillar gris	
+1130	Sillar gris	
+1210	Recubrimiento P1028	
+1210	Recubrimiento P1028	
+1290	TuberÃ­a 3.5	
+1290	TuberÃ­a 3.5	
+1370	Pintura B1020	
+1370	Pintura B1020	
+
+
+-- 3. El RFC de los proveedores que durante el 2000 entregaron en promedio cuando menos 300 materiales.
+SELECT E.RFC 
+FROM Entregan E
+WHERE YEAR(E.Fecha) = 2000
+GROUP BY E.RFC
+HAVING AVG(E.Cantidad) >= 300;
+
+
+RFC	
+BBBB800101	
+FFFF800101	
+GGGG800101	
+
+-- 4. El Total entregado por cada material en el año 2000.
+SELECT E.Clave, SUM(E.Cantidad) AS Total_Entregado 
+FROM Entregan E
+WHERE YEAR(E.Fecha) = 2000
+GROUP BY E.Clave;
+
+
+Clave	Total_Entregado	
+1020	8	
+1050	623	
+1100	466	
+1130	625	
+1140	583	
+1210	43	
+1310	72	
+1360	265	
+1390	107	
+1410	601	
+1430	13	
+
+-- 5. La Clave del material más vendido durante el 2001.
+
+CREATE VIEW materiales_2001 as (SELECT m.clave, COUNT(*) as 'Cantidad entregas'
+FROM materiales m, entregan e
+WHERE m.clave = e.clave
+AND e.fecha BETWEEN 2001-01-01 AND 2001-12-31
+GROUP BY clave);
+
+
+SELECT * FROM materiales_2001;
+
+
+clave	Cantidad entregas	
+1240	1	
+
+-- 6. Productos que contienen el patrón 'ub' en su nombre.
+
+SELECT * FROM Materiales 
+WHERE Descripcion LIKE "%ub%";
+
+
+clave	descripcion	        precio	impuesto	
+1180	Recubrimiento P1001	200	    20	
+1190	Recubrimiento P1010	220	    22	
+1200	Recubrimiento P1019	240	    24	
+1210	Recubrimiento P1028	250	    25	
+1220	Recubrimiento P1037	280	    28	
+1290	TuberÃ­a 3.5	     200     20	
+1300	TuberÃ­a 4.3	     210     21	
+1310	TuberÃ­a 3.6	     220	 22	
+1320	TuberÃ­a 4.4	     230	 23	
+1330	TuberÃ­a 3.7	     240	 24	
+1340	TuberÃ­a 4.5	     250	 25	
+1350	TuberÃ­a 3.8	     260	 26	
+
+-- 7. Denominación y suma del total a pagar para todos los proyectos.
+
+SELECT denominacion, SUM(precio) as "total a pagar"
+FROM Proyectos P, Materiales M, Entregan E 
+WHERE E.clave = M.clave
+AND E.numero = P.numero
+GROUP BY denominacion;
+
+
+denominacion	                            total a pagar	
+AmpliaciÃ³n de la carretera a la huastec	2160	
+Aztecon	                                    490	
+CIT Campeche	                            535	
+CIT Yucatan	                                1870	
+ConstrucciÃ³n de Hospital Infantil	        500	
+ConstrucciÃ³n de plaza Magnolias	        544	
+Disco Atlantic	                            480	
+Educando en Coahuila	                    1570	
+Infonavit Durango	                        685	
+Mexico sin ti no estamos completos	        570	
+Queretaro limpio	                        2085	
+ReconstrucciÃ³n del templo de Guadalupe	    590	
+RemodelaciÃ³n de aulas del IPP	            635	
+RemodelaciÃ³n de Soriana	                1000	
+ReparaciÃ³n de la carretera del sol	        925	
+ReparaciÃ³n de la plaza Sonora	            945	
+RestauraciÃ³n de instalaciones del CEA	    1560	
+Televisa en acciÃ³n	                        329	
+Tu cambio por la educaciÃ³n	                1500	
+Vamos Mexico	                            465	
+
+-- 8.Denominación, RFC y RazonSocial de los proveedores que suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Solo usando vistas).
+
+CREATE VIEW provedor1 as (
+SELECT P.denominacion, E.RFC, Pr.RazonSocial
+FROM Proyectos P, Proveedores Pr, Entregan E
+WHERE  E.numero = P.numero
+AND E.rfc = Pr.rfc
+AND P.denominacion = "Televisa en acción"
+AND P.denominacion NOT IN (
+					SELECT denominacion
+					FROM Proyectos as Py, Entregan as E
+					WHERE E.numero = Py.numero
+                    				AND Py.denominacion = "Educando en Coahuila")
+GROUP BY Pr.rfc);
+
+SELECT * FROM provedor1;
+
+denominación	    RFC	        RazonSocial
+Televisa en acción	AAAA800101	La fragua
+Televisa en acción	CCCC800101	La Ferre
+Televisa en acción	DDDD800101	Cecoforre
+Televisa en acción	EEEE800101	Alvin
+
+-- 9. Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Sin usar vistas, utiliza not in, in o exists).
+
+SELECT Py.denominacion, Pr.rfc, Pr.razonsocial
+FROM Proyectos as Py, Proveedores as Pr, Entregan as E
+WHERE E.numero = Py.numero
+AND E.rfc = Pr.rfc
+AND Py.denominacion = "Televisa en acción"
+AND Py.denominacion NOT IN (
+					SELECT denominacion
+					FROM Proyectos as Py, Entregan as E
+					WHERE E.numero = Py.numero
+                    				AND Py.denominacion = "Educando en Coahuila")
+GROUP BY Pr.rfc;
+
+denominación	    RFC	        RazonSocial
+Televisa en acción	AAAA800101	La fragua
+Televisa en acción	DDDD800101	Cecoforre
+Televisa en acción	EEEE800101	Alvin
+Televisa en acción	CCCC800101	La Ferre
+
+
+-- 10. Costo de los materiales entregados a 'Televisa en acción' cuyos proveedores también suministran materiales a 'Educando en Coahuila' usando NOT IN.
+
+SELECT M.descripcion, M.precio
+FROM Proyectos Py, Entregan E, Materiales M, Proveedores Pr
+WHERE E.numero = Py.numero
+AND M.clave = E.clave
+AND E.rfc = Pr.rfc
+AND Py.denominacion = 'Televisa en acción'
+AND Py.numero IN (
+    SELECT Py2.numero
+    FROM Proyectos Py2, Entregan E2
+    WHERE E2.Numero = Py2.Numero
+    AND Py2.Denominacion = 'Educando en Coahuila'
+);
+
+Tabla Vacia
+
+-- 12. Nombre del material, cantidad de veces entregados y total del costo de dichas entregas por material de todos los proyectos.
+SELECT M.Descripcion, COUNT(E.Clave) AS Veces_Entregado, SUM(M.precio * E.Cantidad) AS Total_Precio 
+FROM Materiales M, Entregan E
+WHERE M.Clave = E.Clave
+GROUP BY M.Descripcion;
+
+
+Descripcion	Veces_Entregado	Total_Precio	
+Arena	2	103600	
+Block	2	34950	
+Cantera amarilla	2	53590	
+Cantera blanca	2	160400	
+Cantera gris	2	1102310	
+Cantera rosa	2	576520	
+Cemento 	2	252600	
+Grava	2	76200	
+Gravilla	2	98190	
+Ladrillos grises	2	17290	
+Ladrillos rojos	2	39250	
+Megablock	2	28200	
+Pintura B1020	2	77375	
+Pintura B1021	4	234000	
+Pintura B1022	2	73625	
+Pintura C1010	2	78625	
+Pintura C1011	4	748825	
+Pintura C1012	2	110125	
+Recubrimiento P1001	2	148200	
+Recubrimiento P1010	2	99000	
+Recubrimiento P1019	2	182880	
+Recubrimiento P1028	2	28250	
+Recubrimiento P1037	2	190960	
+Sillar gris	2	68750	
+Sillar rosa	2	90700	
+
+
