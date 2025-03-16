@@ -1,0 +1,35 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+/* Clase para ocultar elementos cuando sea necesario */
+.hidden {
+    display: none;
+}
+/* Estilos para los mensajes de error */
+.error {
+    color: rgb(226, 26, 119);
+    font-weight: bold;
+}
+
+/* Estilos para los mensajes de éxito */
+.success {
+    color: rgb(28, 196, 129);
+    font-weight: bold;
+}
+
+/* Estilos para el área de drag-and-drop */
+.drag-drop {
+    width: 100%;
+    max-width: 300px;
+    height: 100px;
+    border: 2px dashed #333;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}

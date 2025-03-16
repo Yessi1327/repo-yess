@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/antiguos labs/css/lab06.css">
+</head>
+<body class="has-text-centered">
+    <section class="section">
+        <div class="container">
+            <h1 id="title" class="title">Validador de Password</h1>
+            
+            <!--Formulario para contraseña-->
+            <div class="box">
+                <form id="passwordForm">
+                    <div class="field">
+                        <label class="label" for="password">Password:</label>
+                        <div class="control">
+                            <input class="input" type="password" id="password" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="confirmPassword">Confirmar Password:</label>
+                        <div class="control">
+                            <input class="input" type="password" id="confirmPassword" required>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button class="button is-info is-light" type="submit">Validar</button>
+                    </div>
+                    <p id="message" class="hidden"></p>
+                </form>
+            </div>
+
+            <!-- Mensaje oculto para ayudar al usuario (tooltip)-->
+            <p id="tooltip" class="hidden">
+                <span class="icon-text has-text-warning">
+                <span class="icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </span>
+                <span>Las contraseñas deben coincidir y tener al menos 6 caracteres.</span>
+            </span></p>
+
+            <!-- Área de drop-and-drop para subir archivos -->
+            <div class="box">
+                <div class="drag-drop" id="dropZone">Arrastra una imagen aquí</div>
+                <p id="fileName"></p>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/antiguos labs/jar/lab06.js"></script>
+</body>
+</html>
