@@ -1,0 +1,196 @@
+---1. La suma de las cantidades e importe total de todas las entregas realizadas durante el 97.
+
+SELECT SUM(cantidad + (precio*impuesto)) 
+FROM Entregan e, Materiales m 
+WHERE e.clave = m.clave 
+AND e.fecha = "1997";
+
+SUM(cantidad + (precio*impuesto))
+4152	
+
+-- 2. Para cada proveedor, obtener la razón social del proveedor, número de entregas e importe total de las entregas realizadas. 
+
+SELECT Pr.RazonSocial, COUNT(*) as "Numero de Entregas", 
+SUM(precio + (precio*Impuesto)) as "Importe Total"
+FROM Entregan as E, Proveedores as Pr, Materiales as M
+WHERE E.clave = M.clave
+AND E.RFC = Pr.RFC
+GROUP BY RazonSocial;
+
+
+RazonSocial	Numero de Entregas	Importe Total	
+Alvin	                    10	23314.200006484985	
+Cecoferre	                11	26850	
+Comex	                    10	33890	
+La Ferre	                12	30455	
+La fragua	                12	431735	
+Oviedo	                    12	31805	
+Tabiquera del centro	    10	148055	
+Tubasa	                    10	336150	
+
+-- 3. Por cada material obtener la clave y descripción del material, la cantidad total entregada, la mínima cantidad entregada, la máxima cantidad entregada, el importe total de las entregas de aquellos materiales en los que la cantidad promedio entregada sea mayor a 400.
+
+127.0.0.1/rcortese/materiales/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=rcortese&table=entregan
+
+   Mostrando filas 0 - 16 (total de 17, La consulta tardó 0,0009 segundos.)
+
+
+SELECT 
+  m.clave, 
+  m.descripcion, 
+  SUM(e.cantidad) AS cantidad_total, 
+  MIN(e.cantidad) AS cantidad_minima,
+  MAX(e.cantidad) AS cantidad_maxima,
+  SUM(e.cantidad * m.precio) AS importe_total
+FROM materiales m, entregan e
+WHERE m.clave = e.clave
+GROUP BY m.clave, m.descripcion
+HAVING AVG(e.cantidad) > 400;
+
+
+clave	descripcion	        cantidad_total	cantidad_minima	    cantidad_maxima	    importe_total	
+1010	Varilla 4/32	              1051	            523	                528	            120865	
+1040	Varilla 3/18	              803	            263	                540	            128480	
+1050	Varilla 4/34	              1126	            503	                623	            197050	
+1060	Varilla 3/19	              1016	            324	                692	            193040	
+1100	Block	                      1165	            466	                699	            34950	
+1120	Sillar rosa	                  907	            215	                692	            90700	
+1140	Cantera blanca	              802	            219	                583	            160400	
+1150	Cantera gris	              911	            453	                458	            1102310	
+1230	Cemento 	                  842	            312	                530	            252600	
+1260	Gravilla	                 1091	            460	                631	            98190	
+1270	Tezontle	                 1052	            506	                546	            84160	
+1320	TuberÃ­a 4.4	              1111	             413	             698	         255530	
+1340	TuberÃ­a 4.5	               998	             324	             674	         249500	
+1380	Pintura C1011	              947	            302	                645	            686575	
+1390	Pintura B1021	              804	            107	                697	            100500	
+1410	Pintura B1021	             1068	            467	                601	            133500	
+1420	Pintura C1012	              881	            278	                603	            110125	
+
+
+-- 4. Para cada proveedor, indicar su razón social y mostrar la cantidad promedio de cada material entregado, detallando la clave y descripción del material, excluyendo aquellos proveedores para los que la cantidad promedio sea menor a 500.
+
+SELECT P.RazonSocial, AVG(E.Cantidad) as ‘Cantidades’, M.clave, M.descripcion
+FROM Proveedores as P, Entregan as E, Materiales as M
+WHERE E.RFC = P.RFC
+AND E.clave = M.clave
+GROUP BY P.RazonSocial
+HAVING AVG(Cantidad) < 500;
+
+
+RazonSocial	                   ‘Cantidades’	clave	descripcion	
+Alvin	                        353.9000	1040	Varilla 3/18	
+Cecoferre	                    324.0909	1030	Varilla 4/33	
+Comex	                        289.4000	1050	Varilla 4/34	
+La Ferre	                    455.5000	1020	Varilla 3/17	
+La fragua	                    311.4167	1000	Varilla 3/16	
+Oviedo	                        354.5833	1010	Varilla 4/32	
+Tabiquera del centro	        408.7000	1060	Varilla 3/19	
+Tubasa	                        333.3000	1070	Varilla 4/35	
+
+
+-- 5. Mostrar en una solo consulta los mismos datos que en la consulta anterior pero para dos grupos de proveedores: aquellos para los que la cantidad promedio entregada es menor a 370 y aquellos para los que la cantidad promedio entregada sea mayor a 450.
+
+SELECT P.RazonSocial, AVG(E.Cantidad) as ‘Cantidades’, M.clave, M.descripcion
+FROM Proveedores as P, Entregan as E, Materiales as M
+WHERE E.RFC = P.RFC
+AND E.clave = M.clave
+GROUP BY P.RazonSocial
+HAVING AVG(Cantidad) < 370
+OR AVG(Cantidad) > 450;
+
+
+RazonSocial	        ‘Cantidades’	clave	descripcion	
+Alvin	                353.9000	1040	Varilla 3/18	
+Cecoferre	            324.0909	1030	Varilla 4/33	
+Comex	                289.4000	1050	Varilla 4/34	
+La Ferre	            455.5000	1020	Varilla 3/17	
+La fragua	            311.4167	1000	Varilla 3/16	
+Oviedo	                354.5833	1010	Varilla 4/32	
+Tubasa	                333.3000	1070	Varilla 4/35	
+
+
+-- 1. Clave y descripción de los materiales que nunca han sido entregados.
+
+SELECT m.clave, m.descripcion 
+FROM materiales m
+LEFT JOIN entregan e
+  ON m.clave = e.clave
+WHERE e.clave IS NULL;
+
+
+clave      descripcion
+2000            JabÃ³n
+
+-- 2. Razón social de los proveedores que han realizado entregas tanto al proyecto 'Vamos México' como al proyecto 'Querétaro Limpio'.
+
+(SELECT p.razonsocial
+FROM proveedores p
+JOIN entregan e
+  ON e.rfc = p.rfc
+JOIN proyectos pr
+  ON e.numero = pr.numero
+WHERE pr.denominacion = 'Querétaro Limpio')
+UNION
+(SELECT p.razonsocial
+FROM proveedores p
+JOIN entregan e
+  ON e.rfc = p.rfc
+JOIN proyectos pr
+  ON e.numero = pr.numero
+WHERE pr.denominacion = 'Vamos México');
+
+
+razonsocial	
+La fragua	
+Cecoferre	
+Tubasa	
+Alvin	
+
+-- 3. Descripción de los materiales que nunca han sido entregados al proyecto 'CIT Yucatán'
+
+SELECT m.descripcion
+FROM materiales m
+LEFT JOIN entregan e
+  ON e.clave = m.clave
+LEFT JOIN proyectos p
+  ON p.numero = e.numero
+WHERE p.numero IS NULL;
+
+
+descripcion
+JabÃ³n
+
+-- 4. Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor al promedio de la cantidad entregada por el proveedor con el RFC 'VAGO780901'
+
+SELECT p.razonsocial, AVG(e.numero)
+FROM proveedores p
+JOIN entregan e
+  ON e.rfc = p.rfc
+HAVING AVG(e.numero) > (
+  SELECT AVG(e.numero)
+  FROM proveedores p
+  JOIN entregan e
+    ON e.rfc = p.rfc
+  WHERE p.rfc = 'VAGO780901'
+    );
+
+No da Registros por que no hay proveedores cuyo promedio de cantidad entregada es mayor al promedio de la cantidad entregada por el proveedor con el RFC 'VAGO780901'
+
+
+-- 5. RFC, razón social de los proveedores que participaron en el proyecto 'Infonavit Durango' y cuyas cantidades totales entregadas en el 2000 fueron mayores a las cantidades totales entregadas en el 2001.
+
+SELECT p.RFC, p.RazonSocial
+FROM Proveedores p
+JOIN Entregan e1 ON p.RFC = e1.RFC
+JOIN Proyectos pr ON e1.Numero = pr.Numero
+LEFT JOIN Entregan e2 ON p.RFC = e2.RFC AND e2.Numero = pr.Numero AND YEAR(e2.Fecha) = 2001
+WHERE pr.Denominacion = 'Infonavit Durango'
+AND YEAR(e1.Fecha) = 2000
+GROUP BY p.RFC, p.RazonSocial
+HAVING SUM(CASE WHEN YEAR(e1.Fecha) = 2000 THEN e1.Cantidad ELSE 0 END) >
+       SUM(CASE WHEN YEAR(e2.Fecha) = 2001 THEN e2.Cantidad ELSE 0 END);
+
+
+
+GGGG800101	Tabiquera del centro	
