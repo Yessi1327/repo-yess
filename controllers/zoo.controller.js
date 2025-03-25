@@ -64,10 +64,10 @@ exports.get_root = (request, response, next)=>{
     }
     /*response.render('lista_animales',{ 
       //QUE HACE
-       isLoggedIn: request.session.isLoggedIn || false,
-       username: request.session.username || '',
-       animales: Animal.fetchAll(),
-       info: mensaje,
+      isLoggedIn: request.session.isLoggedIn || false,
+      username: request.session.username || '',
+      animales: Animal.fetchAll(),
+      info: mensaje,
       });*/
       
       //Sacar registros de la BD Y Vistas Dinamicas
