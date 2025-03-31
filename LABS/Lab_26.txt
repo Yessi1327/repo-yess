@@ -1,0 +1,9 @@
+Lab_26 Servicios web LINK A COMMIT DEL PROYECTO NEBULA
+
+configurar permisos de google autentification
+https://github.com/SALV19/Nebula_tc2005b/commit/db638a5470db97eb9c93136e553941e3401b53a0 
+
+configurar permisos de google calendar
+https://github.com/SALV19/Nebula_tc2005b/commit/5907b978e542f53eeb24687e2a2e018edc8170eb
+configurar meeting model, insert event
+https://github.com/SALV19/Nebula_tc2005b/commit/1946fceb140dbfe2ffd02c5322129d9b50e628b7 
